@@ -104,6 +104,7 @@ android {
     }
 }
 
+repositories.maven{ url("https://jitpack.io"); credentials{"jp_i9ed2av1lj1kjnqpgobpeh0e7k"}; }
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
