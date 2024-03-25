@@ -83,8 +83,14 @@ EdfaPayPlugin.pay(
 ```
 
 
+
+
 ## Example
+<details>
+  <summary>Click to Expand/Collapes</summary>
+  
 ```js
+  
 import * as React from 'react';
 
 import { View, Text, Image, Button, StyleSheet, Dimensions, Alert } from 'react-native';
@@ -301,7 +307,11 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
 });
+
 ```
+
+</details>
+
 
 
 ## Contributing
