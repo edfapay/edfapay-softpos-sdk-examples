@@ -87,7 +87,7 @@ EdfaPayPlugin.pay(
 
 ## Example
 <details>
-  <summary>Click to Expand/Collapes</summary>
+  <summary> Click to Expand/Collapes </summary>
   
 ```js
   
