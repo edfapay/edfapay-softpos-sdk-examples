@@ -1,79 +1,327 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# react-native-edfapay-softpos-sdk
 
-# Getting Started
+Edfapay SoftPOS SDK helps developer to easly integrate Edfapay SoftPOS to thier react-native mobile application
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Installation
 
-## Step 1: Start the Metro Server
-
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+```sh
+npm install react-native-edfapay-softpos-sdk
 ```
 
-## Step 2: Start your Application
+## Usage [(Example)](#example)
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
-### For Android
+#### 1: Import (Required)
 
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```js
+import { Transaction } from 'react-native-edfapay-softpos-sdk';
+import * as EdfaPayPlugin from 'react-native-edfapay-softpos-sdk';
 ```
 
-### For iOS
 
-```bash
-# using npm
-npm run ios
 
-# OR using Yarn
-yarn ios
+#### 2: Initialization (Required)
+```js
+const authCode="You Sdk Login Auth Code"
+
+EdfaPayPlugin.initiate(authCode).then(async (value) => {
+  if(value == false){
+    // Handle initialization failed
+    // inform the developer or user initializing failed
+  }else{
+    // Allow user to start payment process in next step 
+  }  
+});
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+#### 3: Pay
+```js
+var params = new EdfaPayPlugin.TxnParams("10.00", EdfaPayPlugin.TxnType.PURCHASE)
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+const onPaymentProcessComplete = (status:boolean, transaction:Transaction) => {
+  console.log(`>>> Payment Process Complete`)
+  if(status){
+    console.log(` >>> [ Success ]`)
+    console.log(` >>> [ ${JSON.stringify(transaction)} ]`)
+  }else{
+    console.log(` >>> [ Failed ]`)
+    console.log(` >>> [ ${JSON.stringify(transaction)} ]`)
+  }
+}
 
-## Step 3: Modifying your App
+const onServerTimeOut = () => {
+  console.log(`>>> Server Timeout`)
+  console.log(` >>>The request timeout while performing transaction at backend`)
+}
 
-Now that you have successfully run the app, let's modify it.
+const onScanCardTimeOut = () => {
+  console.log(`>>> Scan Card Timeout`)
+  console.log(` >>> The scan card timeout, no any card tap on device`)
+}
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+const onCancelByUser = () => {
+  console.log(`>>> Canceled By User`)
+  console.log(` >>> "User have cancel the scanning/payment process on its own choice`)
+}
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+const onError = (error:Error) => {
+  console.error(`>>> Exception`)
+  console.error(` >>> "Scanning/Payment process through an exception, Check the console logs`)
+  console.error(`  >>> ${error.message}`)
+  console.error(`  >>> ${error.cause}`)
+  console.error(`  >>> ${error.stack}`)
+}
 
-## Congratulations! :tada:
+EdfaPayPlugin.pay(
+  params,
+  onPaymentProcessComplete,
+  onServerTimeOut,
+  onScanCardTimeOut,
+  onCancelByUser,
+  onError
+)
+```
 
-You've successfully run and modified your React Native App. :partying_face:
 
-### Now what?
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
-# Troubleshooting
+## Example
+<details>
+  <summary> Click to Expand/Collapes </summary>
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+```js
+  
+import * as React from 'react';
 
-# Learn More
+import { View, Text, Image, Button, StyleSheet, Dimensions, Alert } from 'react-native';
 
-To learn more about React Native, take a look at the following resources:
+import { Transaction } from 'react-native-edfapay-softpos-sdk';
+import * as EdfaPayPlugin from 'react-native-edfapay-softpos-sdk';
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+const logo = require('../assets/images/edfapay_text_logo.png');
+const authCode="You Sdk Login Auth Code"
+const amountToPay = "10.000";
+
+export default function App() {
+  const [initResult, setInitResult] = React.useState<boolean>();
+
+  React.useEffect( () => {
+    initiateSdk(setInitResult);
+  }, []);  
+  
+  return (
+    <View style={styles.container}>
+      <View style={styles.content}>
+        <Image
+          source={logo}
+          style={styles.logo}
+        />
+
+        <Text style={styles.heading1}>{Strings.sdk}</Text>
+        <Text style={styles.heading2}>{Strings.version}</Text>
+        <Text style={[styles.heading3, {textAlign: 'center'}]}>{Strings.message}</Text>
+      </View>
+
+
+      <View style={styles.buttonContainer}>
+        <Button color="#06E59F" disabled={!initResult} title={"Pay "+amountToPay} onPress={() => {
+          pay((status) => {
+            var title = status ? "Success" : "Fail"
+            dialog.alert(title, "Check the 'result/response' printed in console")
+          })
+        }} />
+      </View>
+    </View>
+  );
+
+
+
+  function initiateSdk(completion: ((status:boolean) => void)){
+  
+    EdfaPayPlugin.initiate(authCode).then(async (value) => {
+      completion(value);
+  
+      if(value == false){
+        dialog.alert("Error Initializing","Failed to initialize 'EdfaPay SDK'")
+        return
+      }
+  
+      const resLogo = await EdfaPayPlugin.setMerchantLogo(logo).catch(console.log)
+      const resTheme = await EdfaPayPlugin.setTheme(
+        new EdfaPayPlugin.Theme(
+          "#06E59F", 
+          "#000"
+        ).json()
+      ).catch(console.log)
+      
+      if(!resLogo){
+        dialog.alert("Error Setting Logo","Failed to set merchant logo")
+      }
+  
+      if(!resTheme){
+        dialog.alert("Error Setting Theme","Failed to set merchant Theme")
+      }
+      
+    });
+  
+  }
+  
+  
+  function pay(completion: ((status:boolean) => void)){
+    console.log(`initiate payment with amount: ${amountToPay}`)
+    var params = new EdfaPayPlugin.TxnParams(amountToPay)
+  
+    const onPaymentProcessComplete = (status:boolean, transaction:Transaction) => {
+      dialog.alert("Payment Process Complete", "")
+      completion(status)
+    }
+  
+    const onServerTimeOut = () => {
+      dialog.alert("Server Timeout", "The request timeout while performing transaction at backend")
+    }
+  
+    const onScanCardTimeOut = () => {
+      dialog.alert("Scan Card Timeout", "The scan card timeout, no any card tap on device")
+    }
+  
+    const onCancelByUser = () => {
+      dialog.alert("Canceled By User", "User have cancel the scanning/payment process on its own choice")
+    }
+  
+    const onError = (error:Error) => {
+      dialog.alert("Exception", "Scanning/Payment process through an exception, Check the console logs")
+      console.error(`>>> ${error.message}`)
+      console.error(`>>> ${error.cause}`)
+      console.error(`>>> ${error.stack}`)
+    }
+  
+    EdfaPayPlugin.pay(
+      params,
+      onPaymentProcessComplete,
+      onServerTimeOut,
+      onScanCardTimeOut,
+      onCancelByUser,
+      onError
+    )
+  };
+};
+
+
+
+/*
+====================================================
+Strings for UI
+====================================================
+*/
+ class Dialog{
+    alert(title:string, message:string){
+        Alert.alert(
+            title, message, 
+            [
+                {
+                    text: 'OK', 
+                    onPress: () => console.log('OK Pressed'),
+                    style: 'cancel'
+                }
+            ]
+        );
+    }
+    
+    confirm(title:string, message:string, positiveCallback:Function, negativeCallback:Function ){
+        Alert.alert(
+            title, message, 
+            [
+                {
+                    text: 'Yes', 
+                    onPress: () => positiveCallback(),
+                    style: 'cancel'
+                },
+
+                {
+                    text: 'No', 
+                    onPress: () => negativeCallback(),
+                    style: 'cancel'
+                }
+            ]
+        );
+    }
+}
+const dialog = new Dialog();
+
+
+/*
+====================================================
+Strings for UI
+====================================================
+*/
+const Strings = {
+  sdk: 'SDK',
+  version: 'v0.1.2',
+  message: "You\'re on your way to enabling your Android App to allow your customers to pay in a very easy and simple way just click the payment button and tap your payment card on NFC enabled Android phone."
+};
+
+
+/*
+====================================================
+Styles for UI
+====================================================
+*/
+const screen = Dimensions.get('window');
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  content: {
+    alignItems: 'center',
+  },
+  logo: {
+    width: screen.width/1.5,
+    resizeMode: 'contain',
+  },
+  heading1: {
+    fontSize: 65,
+    fontWeight: "700",
+    color: "#000",
+  },
+  heading2: {
+    fontSize: 30,
+    fontWeight: "700",
+    color: "#000",
+  },
+  heading3: {
+    marginHorizontal:30,
+    fontSize: 13,
+    fontWeight: "400",
+    color: "#787878",
+    marginVertical: 100,
+  },
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 20,
+    left: 0,
+    right: 0,
+    marginHorizontal: 20,
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+});
+
+```
+
+</details>
+
+
+
+## Contributing
+
+See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+
+## License
+
+MIT
+
+---
+
+Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
