@@ -1,4 +1,4 @@
-### Edfapay SoftPOS SDK helps developer to easly integrate Edfapay SoftPOS to thier react-native mobile application
+### Edfapay SoftPOS SDK helps developer to easly integrate Edfapay SoftPOS to thier mobile application
 
 
 <details>
