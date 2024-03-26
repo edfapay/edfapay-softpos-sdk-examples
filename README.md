@@ -12,9 +12,9 @@
   <br>**Place the below code snippit to `./android/app/build.gradle` path**
   ```gradle
   repositories.maven{
-    url("https://jitpack.io")
+    url "https://jitpack.io"
     credentials{
-       "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
+       username "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
     } 
   }
   ```
