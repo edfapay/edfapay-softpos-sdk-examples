@@ -1,35 +1,41 @@
-# react-native-edfapay-softpos-sdk
-## Installation
+### Edfapay SoftPOS SDK helps developer to easly integrate Edfapay SoftPOS to thier mobile application
 
-#### 1: Confiiguration (Important)
-Its is important to add the jipack support and authorization to your project android module, It's allows the gradle to download the native dependency from jitpack.
-<br>**Place the below code snippit to `./android/app/build.gradle` path**
+
+<details>
+  <summary> React Native  (Expand/Collapse)</summary>
+  
+  # react-native-edfapay-softpos-sdk
+  ## Installation
+  
+  #### 1: Confiiguration (Important)
+  Its is important to add the jipack support and authorization to your project android module, It's allows the gradle to download the native dependency from jitpack.
+  <br>**Place the below code snippit to `./android/app/build.gradle` path**
   ```gradle
   repositories.maven{
-    url("https://jitpack.io")
+    url "https://jitpack.io"
     credentials{
-       "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
+       username "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
     } 
   }
   ```
-#### 2: Install react-native SDK (Important)
+  #### 2: Install react-native SDK (Important)
   ```js
   npm install react-native-edfapay-softpos-sdk
   ```
-
-## Usage [(Example)](#example)
-
-
-#### 1: Import (Important)
-
+  
+  ## Usage [(Example)](#example)
+  
+  
+  #### 1: Import (Important)
+  
   ```js
   import { Transaction } from 'react-native-edfapay-softpos-sdk';
   import * as EdfaPayPlugin from 'react-native-edfapay-softpos-sdk';
   ```
-
-
-
-#### 2: Initialization (Important)
+  
+  
+  
+  #### 2: Initialization (Important)
   ```js
   const authCode="You Sdk Login Auth Code"
   
@@ -42,8 +48,8 @@ Its is important to add the jipack support and authorization to your project and
     }  
   });
   ```
-
-#### 3: Pay
+  
+  #### 3: Pay
   ```js
   var params = new EdfaPayPlugin.TxnParams("10.00", EdfaPayPlugin.TxnType.PURCHASE)
   
@@ -90,14 +96,14 @@ Its is important to add the jipack support and authorization to your project and
     onError
   )
   ```
-
-
-
-
-## Example
-<details>
+  
+  
+  
+  
+  ## Example
+  <details>
     <summary> Click to Expand/Collapes </summary>
-
+    
   ```js
     
   import * as React from 'react';
@@ -318,9 +324,9 @@ Its is important to add the jipack support and authorization to your project and
   });
   
   ```
-
+  
+  </details>
 </details>
-
 
 
 ## Contributing
