@@ -5583,10 +5583,10 @@ react-is@^17.0.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-native-edfapay-softpos-sdk@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.npmjs.org/react-native-edfapay-softpos-sdk/-/react-native-edfapay-softpos-sdk-0.1.4.tgz"
-  integrity sha512-I1kxj3gRr1RqcyyqwO/R2vsI9kwCsEDEk5dNMS16ldySgz6AhMgE+IbCv5JmOPPxw87QEn4vzoz3ad/S32kq4w==
+react-native-edfapay-softpos-sdk@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.npmjs.org/react-native-edfapay-softpos-sdk/-/react-native-edfapay-softpos-sdk-0.1.9.tgz"
+  integrity sha512-dKZspS3rJrFPvif51wZ7dWU6t1g0Zjy6I2dKsZYc1jOv8LvlTFOgoG8PsubiVR7+OfpAlgJzTZzM8H5+Pcji2g==
 
 react-native@*, react-native@0.73.6:
   version "0.73.6"

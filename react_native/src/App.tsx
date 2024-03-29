@@ -4,6 +4,7 @@ import { View, Text, Image, Button, StyleSheet, Dimensions, Alert } from 'react-
 import { dialog } from './Dialog';
 import { Strings } from './Strings';
 import { styles } from './Styles';
+import * as Icons from './IconsBase64';
 
 import { Transaction } from 'react-native-edfapay-softpos-sdk';
 import * as EdfaPayPlugin from 'react-native-edfapay-softpos-sdk';
@@ -49,31 +50,21 @@ export default function App() {
 
 function initiateSdk(completion: ((status:boolean) => void)){
 
-  EdfaPayPlugin.initiate(authCode).then(async (value) => {
+  EdfaPayPlugin.initiate(authCode).then(async (value:boolean) => {
     completion(value);
-
     if(value == false){
       dialog.alert("Error Initializing","Failed to initialize 'EdfaPay SDK'")
       return
     }
-
-    const resLogo = await EdfaPayPlugin.setMerchantLogo(logo).catch(console.log)
-    const resTheme = await EdfaPayPlugin.setTheme(
-      new EdfaPayPlugin.Theme(
-        "#06E59F",
-        "#000"
-      ).json()
-    ).catch(console.log)
-
-    if(!resLogo){
-      dialog.alert("Error Setting Logo","Failed to set merchant logo")
-    }
-
-    if(!resTheme){
-      dialog.alert("Error Setting Theme","Failed to set merchant Theme")
-    }
-
   });
+
+
+
+  EdfaPayPlugin.theme
+      .setButtonBackgroundColor("#06E59F")
+      .setButtonTextColor("#000000")
+      .setPoweredByImage(Icons.logo)
+      .setHeaderImage(Icons.logo)
 
 }
 
