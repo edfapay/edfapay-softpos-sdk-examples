@@ -48,8 +48,21 @@
     }  
   });
   ```
+
+
   
-  #### 3: Pay
+  #### 3: Setting Theme (Optional)
+  ```js
+  const logo = "base64 of image" 
+  EdfaPayPlugin.theme
+      .setButtonBackgroundColor("#06E59F")
+      .setButtonTextColor("#000000")
+      .setPoweredByImage(logo)
+      .setHeaderImage(logo)
+  ```
+  
+  
+  #### 4: Pay
   ```js
   var params = new EdfaPayPlugin.TxnParams("10.00", EdfaPayPlugin.TxnType.PURCHASE)
   
@@ -96,7 +109,6 @@
     onError
   )
   ```
-  
   
   
   
