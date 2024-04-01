@@ -1,0 +1,22 @@
+[
+  {
+    "code" : "en",
+    "name" : "English",
+    "country" : "US"
+  },
+  {
+    "code" : "ar",
+    "name" : "العربي",
+    "country" : "SA"
+  },
+  {
+    "code" : "ur",
+    "name" : "اردو",
+    "country" : "PK"
+  },
+  {
+    "code" : "hi",
+    "name" : "हिंदी",
+    "country" : "IN"
+  }
+]

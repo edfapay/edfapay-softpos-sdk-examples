@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:padding="@dimen/_8sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/light1"
+            android:backgroundTint="@color/light_grey"
+            android:background="@drawable/circle_filled"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_margin="@dimen/_4sdp"
+            app:cardCornerRadius="@dimen/_25sdp"/>
+
+        <View
+            android:id="@+id/light2"
+            android:background="@drawable/circle_filled"
+            android:backgroundTint="@color/light_grey"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            app:cardCornerRadius="@dimen/_25sdp"/>
+
+        <View
+            android:id="@+id/light3"
+            android:backgroundTint="@color/light_grey"
+            android:background="@drawable/circle_filled"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            app:cardCornerRadius="@dimen/_25sdp"/>
+
+        <View
+            android:id="@+id/light4"
+            android:backgroundTint="@color/light_grey"
+            android:background="@drawable/circle_filled"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            app:cardCornerRadius="@dimen/_25sdp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

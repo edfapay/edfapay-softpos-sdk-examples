@@ -1,0 +1,455 @@
+settings:
+
+  terminal:
+
+    terminal:
+      tag_9F1A:
+        value: "0682"
+        description: "Terminal Country Code"
+      tag_9F1E:
+        value: "3132333435363738"
+        description: "Interface Device (IFD) Serial Number"
+      tag_9F33:
+        value: "004888"
+#        value: "006888"  //old value
+        description: "Terminal Capabilities (Follow EMV Book 4 annex A2 to fill 3 bytes) according to ICS value"
+      tag_9F35:
+        value: "21"
+        description: "Terminal Type (Follow EMV Book 4 annex A1 to fill 1 byte) according to ICS value"
+      tag_9F40:
+        value: "600000A000"
+        description: "Additional Terminal Capabilities (Follow EMV Book4 Annex A2) according to ICS value"
+      tag_9C:
+        value: "00"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "ALCINEO"
+        type: string
+        description: "Merchant Identifier"
+      tag_9F4E:
+        value: "Railway Operator"
+        type: string
+        description: "Merchant Name and Location"
+      tag_9F6D:
+        value: "C0"
+        description: "Expresspay Terminal Capabilities"
+      tag_9F6E:
+        value: "18E00003"
+        description: "Terminal Transaction Capabilities (Follow Expresspay Terminal Technical Specification v4.0.2.pdf Table 22.8)"
+      tag_D000:
+        value: count_application
+        type: function
+        description: "Number of supported AIDs"
+      tag_D001:
+        value: count_drl
+        type: function
+        description: "Number of supported Reader Limit Sets"
+      tag_DF8130:
+        value: "0E"
+        description: "Hold Time value (in unit of 100ms) - after completed transaction"
+      tag_DFDF02:
+        value: "50828487898A8C8E9495999A9B9C5F255F285F2A5F2D5F349F019F029F039F079F089F099F0A9F0B9F0D9F0E9F0F9F109F119F129F159F169F199F1A9F1C9F1E9F219F249F259F269F279F339F349F359F369F379F389F399F429F4A9F4C9F4E9F5A9F5B9F6D9F6E9F70DFDF1757"
+        description: "Online and clearing message for EMV Transaction"
+      tag_DFDF03:
+        value: "8287898A8C8E9495999A9B9C5F255F2A9F019F029F079F089F099F0A9F0D9F0E9F0F9F109F159F169F199F1A9F1C9F1E9F249F259F269F279F339F349F359F369F379F389F399F409F429F4A9F4C9F4E9F5A9F5B9F6D9F6E9F70DFDF00DFDF17DFDF28DFDF29"
+        description: "Online and Clearing message MagStripe"
+      tag_DFDF06:
+        value: "8A91"
+        description: "Tags participating in online response"
+      tag_DFDF14:
+        value: "00003A98"
+        description: "Socket timeout for online processing (in ms)"
+      tag_DFDF15:
+        value: "00000003"
+        description: "Number of connection retries in online processing"
+      tag_DFDF16:
+        value: "00000080"
+        description: "Maximum length of issuer script"
+      tag_DFDF22:
+        value: "1009"
+        description: "Terminal Features, see in AO-AN-Propery"
+      tag_DFDF2E:
+        value: "3C"
+        description: "Unpredictable Number Range"
+      tag_DFDF33:
+        value: "56575A5F205F245F309F6B"
+
+  application:
+
+    App1_00:
+      tag_9F01:
+        value: "000000000001"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A000000025"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F1B:
+        value: "00002710"
+        description: "Terminal Floor Limit"
+      tag_DF00:
+        value: "000009999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_E001:
+        value: "01"
+        description: "Application Selection Indicator (ASI)"
+      tag_DF8120:
+        value: "DC50FC9800"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0010000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "DE00FC9800"
+        description: "Terminal Action Code - Online"
+      tag_DFDF19:
+        value: "5F2403"
+        description: "Default TDOL"
+      tag_DFDF2F:
+        value: "0001"
+        description: "Application Version Number Supported"
+
+    App2_00:
+      tag_9F01:
+        value: "000000000001"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A0000000250000"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F1B:
+        value: "00002710"
+        description: "Terminal Floor Limit"
+      tag_DF00:
+        value: "000009999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_E001:
+        value: "01"
+        description: "Application Selection Indicator (ASI)"
+      tag_DF8120:
+        value: "DC50FC9800"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0010000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "DE00FC9800"
+        description: "Terminal Action Code - Online"
+      tag_DFDF19:
+        value: "5F2403"
+        description: "Default TDOL"
+      tag_DFDF2F:
+        value: "0001"
+        description: "Application Version Number Supported"
+
+    App3_00:
+      tag_9F01:
+        value: "000000000001"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A00000002501"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F1B:
+        value: "00002710"
+        description: "Terminal Floor Limit"
+      tag_DF00:
+        value: "000009999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_E001:
+        value: "01"
+        description: "Application Selection Indicator (ASI)"
+      tag_DF8120:
+        value: "DC50FC9800"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0010000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "DE00FC9800"
+        description: "Terminal Action Code - Online"
+      tag_DFDF19:
+        value: "5F2403"
+        description: "Default TDOL"
+      tag_DFDF2F:
+        value: "0001"
+        description: "Application Version Number Supported"
+
+    App4_00:
+      tag_9F01:
+        value: "000000000001"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A000000025010104"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F1B:
+        value: "00002710"
+        description: "Terminal Floor Limit"
+      tag_DF00:
+        value: "000009999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_E001:
+        value: "01"
+        description: "Application Selection Indicator (ASI)"
+      tag_DF8120:
+        value: "DC50FC9800"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0010000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "DE00FC9800"
+        description: "Terminal Action Code - Online"
+      tag_DFDF19:
+        value: "5F2403"
+        description: "Default TDOL"
+      tag_DFDF2F:
+        value: "0001"
+        description: "Application Version Number Supported"
+
+    App5_00:
+      tag_9F01:
+        value: "000000000001"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A000000025010402"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F1B:
+        value: "00002710"
+        description: "Terminal Floor Limit"
+      tag_DF00:
+        value: "000009999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_E001:
+        value: "01"
+        description: "Application Selection Indicator (ASI)"
+      tag_DF8120:
+        value: "DC50FC9800"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0010000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "DE00FC9800"
+        description: "Terminal Action Code - Online"
+      tag_DFDF19:
+        value: "5F2403"
+        description: "Default TDOL"
+      tag_DFDF2F:
+        value: "0001"
+        description: "Application Version Number Supported"
+
+    App6_00:
+      tag_9F01:
+        value: "000000000001"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A000000025010701"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F1B:
+        value: "00002710"
+        description: "Terminal Floor Limit"
+      tag_DF00:
+        value: "000009999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_E001:
+        value: "01"
+        description: "Application Selection Indicator (ASI)"
+      tag_DF8120:
+        value: "DC50FC9800"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0010000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "DE00FC9800"
+        description: "Terminal Action Code - Online"
+      tag_DFDF19:
+        value: "5F2403"
+        description: "Default TDOL"
+      tag_DFDF2F:
+        value: "0001"
+        description: "Application Version Number Supported"
+
+    App7_00:
+      tag_9F01:
+        value: "000000000001"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A000000025010801"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F1B:
+        value: "00002710"
+        description: "Terminal Floor Limit"
+      tag_DF00:
+        value: "000009999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_E001:
+        value: "01"
+        description: "Application Selection Indicator (ASI)"
+      tag_DF8120:
+        value: "DC50FC9800"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0010000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "DE00FC9800"
+        description: "Terminal Action Code - Online"
+      tag_DFDF19:
+        value: "5F2403"
+        description: "Default TDOL"
+      tag_DFDF2F:
+        value: "0001"
+        description: "Application Version Number Supported"
+
+    App8_00:
+      tag_9F01:
+        value: "000000000001"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A000000025010403"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F1B:
+        value: "00002710"
+        description: "Terminal Floor Limit"
+      tag_DF00:
+        value: "000009999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_E001:
+        value: "01"
+        description: "Application Selection Indicator (ASI)"
+      tag_DF8120:
+        value: "DC50FC9800"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0010000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "DE00FC9800"
+        description: "Terminal Action Code - Online"
+      tag_DFDF19:
+        value: "5F2403"
+        description: "Default TDOL"
+      tag_DFDF2F:
+        value: "0001"
+        description: "Application Version Number Supported"
+
+    App9_00:
+      tag_9F01:
+        value: "000000000001"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A000000025040303"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F1B:
+        value: "00002710"
+        description: "Terminal Floor Limit"
+      tag_DF00:
+        value: "000009999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_E001:
+        value: "01"
+        description: "Application Selection Indicator (ASI)"
+      tag_DF8120:
+        value: "DC50FC9800"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0010000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "DE00FC9800"
+        description: "Terminal Action Code - Online"
+      tag_DFDF19:
+        value: "5F2403"
+        description: "Default TDOL"
+      tag_DFDF2F:
+        value: "0001"
+        description: "Application Version Number Supported"

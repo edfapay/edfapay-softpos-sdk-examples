@@ -1,0 +1,33 @@
+// #### Version 2.0 (<BundleVersion>.<fileVersion>)
+// DO NOT change values in this file
+{"READER_INITIALISE_PROFILES" : [{
+    "name": "initMposTerm",
+    "data": [{
+        "tag": "9F40",
+        "name": "Additional Terminal Capabilities"
+    }, {
+        "tag": "9F1E",
+        "name": "Interface Device Serial Number"
+    }, {
+        "tag": "9F15",
+        "name": "Merchant Category Code"
+    }, {
+        "tag": "9F4E",
+        "name": "Merchant Name and Location"
+    }, {
+        "tag": "9F1A",
+        "name": "Terminal Country Code"
+    }, {
+        "tag": "9F1C",
+        "name": "Terminal Identification"
+    }, {
+        "tag": "9F53",
+        "name": "Transaction Category Code"
+    }, {
+        "tag": "9F35",
+        "name": "Terminal Type"
+    }]
+}, {
+    "name": "initNoData",
+    "data": []
+}]}

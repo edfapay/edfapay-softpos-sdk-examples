@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">48dp</dimen>
+    <string name="authenticating">Authenticating...</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">Error</string>
+    <string name="please_try_again_later">Please try again later</string>
+    <string name="please_try_again_later_or_click_button_below_to_retry">Please try again later, or click button below to retry</string>
+    <string name="try_again">Try Again</string>
+</resources>

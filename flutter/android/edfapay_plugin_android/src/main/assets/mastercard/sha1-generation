@@ -1,0 +1,27 @@
+Mac Terminal for Each File in Folder mastercard
+-------------------------------------------------
+shasum /Volumes/EdfaPay/Codes/Bitbucket/edfapay_android/edfapay_card_module/src/main/assets/mastercard/*
+
+
+Windows
+-------------------------------------------------
+https://emn178.github.io/online-tools/sha1_checksum.html
+
+
+
+Checksum Updates
+-------------------------------------------------
+If there is change in .json files, we need to generate new checksum and update on the manifest.json
+
+-----Filename-----                  -----Tag-----
+ProfileReader.json              -->   readerProfile
+ProfileData.json                -->   readerData
+ProfileReaderInitialise.json    -->   readerInit
+v3DataDictionary.json           -->   v3DataDictionary
+tlvTerminal.json                -->   terminalDictionary
+ReferanceTags.json              -->   referenceTags
+CAPublicKeys.json               -->   capKeys
+CertificateRevocationList.json  -->   certificateRevocationList
+DefaultTerminalData.json        -->   defaultTerminalData
+ExceptionFile.json              -->   exceptionFile
+AdditionalInfo.json             -->   additionalInfo

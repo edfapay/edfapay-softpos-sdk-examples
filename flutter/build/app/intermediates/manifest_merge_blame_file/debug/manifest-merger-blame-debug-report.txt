@@ -1,0 +1,439 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.edfapay.fplugin.example"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="29"
+9        android:targetSdkVersion="34" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Volumes/Data/Projects/Edfapay/Flutter/edfapay-plugin-flutter/example/android/app/src/debug/AndroidManifest.xml:7:5-66
+15-->/Volumes/Data/Projects/Edfapay/Flutter/edfapay-plugin-flutter/example/android/app/src/debug/AndroidManifest.xml:7:22-64
+16    <uses-permission android:name="android.permission.NFC" />
+16-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:8:5-62
+16-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:8:22-59
+17
+18    <uses-feature
+18-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:10:5-12:35
+19        android:name="android.hardware.nfc"
+19-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:11:9-44
+20        android:required="true" />
+20-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:12:9-32
+21
+22    <queries>
+22-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:14:5-18:15
+23        <intent>
+23-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:15:9-17:18
+24            <action android:name="android.nfc.action.TECH_DISCOVERED" />
+24-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:16:13-73
+24-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:16:21-70
+25        </intent>
+26    </queries>
+27
+28    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+28-->[com.github.edfapay.edfapay-plugin-android:api-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/15129bd53a7f6a625c3e4c54545572a4/transformed/jetified-api-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:9:5-79
+28-->[com.github.edfapay.edfapay-plugin-android:api-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/15129bd53a7f6a625c3e4c54545572a4/transformed/jetified-api-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:9:22-76
+29    <uses-permission android:name="android.permission.WAKE_LOCK" />
+29-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:23:5-68
+29-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:23:22-65
+30    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+30-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:25:5-81
+30-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:25:22-78
+31    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+31-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:26:5-77
+31-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:26:22-74
+32
+33    <permission
+33-->[androidx.core:core:1.9.0] /Users/zik/.gradle/caches/transforms-3/f791c1c4207424c565b59ab40e41f1d1/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+34        android:name="com.edfapay.fplugin.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+34-->[androidx.core:core:1.9.0] /Users/zik/.gradle/caches/transforms-3/f791c1c4207424c565b59ab40e41f1d1/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+35        android:protectionLevel="signature" />
+35-->[androidx.core:core:1.9.0] /Users/zik/.gradle/caches/transforms-3/f791c1c4207424c565b59ab40e41f1d1/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+36
+37    <uses-permission android:name="com.edfapay.fplugin.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+37-->[androidx.core:core:1.9.0] /Users/zik/.gradle/caches/transforms-3/f791c1c4207424c565b59ab40e41f1d1/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+37-->[androidx.core:core:1.9.0] /Users/zik/.gradle/caches/transforms-3/f791c1c4207424c565b59ab40e41f1d1/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+38
+39    <application
+40        android:name="android.app.Application"
+41        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+41-->[androidx.core:core:1.9.0] /Users/zik/.gradle/caches/transforms-3/f791c1c4207424c565b59ab40e41f1d1/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+42        android:debuggable="true"
+43        android:extractNativeLibs="false"
+44        android:hardwareAccelerated="true"
+44-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:20:18-52
+45        android:icon="@mipmap/ic_launcher"
+46        android:label="flutter_edfapay_softpos_sdk_example"
+47        android:testOnly="true"
+48        android:usesCleartextTraffic="true" >
+49        <activity
+50            android:name="com.edfapay.fplugin.example.MainActivity"
+51            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+52            android:exported="true"
+53            android:hardwareAccelerated="true"
+54            android:launchMode="singleTop"
+55            android:theme="@style/LaunchTheme"
+56            android:windowSoftInputMode="adjustResize" >
+57
+58            <!--
+59                 Specifies an Android theme to apply to this Activity as soon as
+60                 the Android process has started. This theme is visible to the user
+61                 while the Flutter UI initializes. After that, this theme continues
+62                 to determine the Window background behind the Flutter UI.
+63            -->
+64            <meta-data
+65                android:name="io.flutter.embedding.android.NormalTheme"
+66                android:resource="@style/NormalTheme" />
+67
+68            <intent-filter>
+69                <action android:name="android.intent.action.MAIN" />
+70
+71                <category android:name="android.intent.category.LAUNCHER" />
+72            </intent-filter>
+73        </activity>
+74        <!--
+75             Don't delete the meta-data below.
+76             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+77        -->
+78        <meta-data
+79            android:name="flutterEmbedding"
+80            android:value="2" />
+81
+82        <activity
+82-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:21:9-24:72
+83            android:name="com.edfapay.paymentcard.ui.ScanCardActivity"
+83-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:22:13-71
+84            android:exported="false"
+84-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:23:13-37
+85            android:theme="@style/Theme.EdfaCardPayment.NoActionBar" />
+85-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:24:13-69
+86        <activity
+86-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:25:9-27:40
+87            android:name="com.edfapay.paymentcard.ui.TestApisActivity"
+87-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:26:13-71
+88            android:exported="false" />
+88-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:27:13-37
+89        <activity
+89-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:28:9-30:40
+90            android:name="com.edfapay.paymentcard.ui.TestCardPaymentActivity"
+90-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:29:13-78
+91            android:exported="false" />
+91-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:30:13-37
+92        <activity
+92-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:31:9-33:40
+93            android:name="com.edfapay.paymentcard.ui.ValidateConfigsActivity"
+93-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:32:13-78
+94            android:exported="false" />
+94-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:33:13-37
+95
+96        <provider
+96-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:35:9-43:20
+97            android:name="androidx.startup.InitializationProvider"
+97-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:36:13-67
+98            android:authorities="com.edfapay.fplugin.example.androidx-startup"
+98-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:37:13-68
+99            android:exported="false" >
+99-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:38:13-37
+100            <meta-data
+100-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:40:13-42:52
+101                android:name="androidx.work.WorkManagerInitializer"
+101-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:41:17-68
+102                android:value="androidx.startup" />
+102-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:42:17-49
+103            <meta-data
+103-->[androidx.emoji2:emoji2:1.2.0] /Users/zik/.gradle/caches/transforms-3/112feaf024ddff06c7ae5597d1b3b404/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+104                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+104-->[androidx.emoji2:emoji2:1.2.0] /Users/zik/.gradle/caches/transforms-3/112feaf024ddff06c7ae5597d1b3b404/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+105                android:value="androidx.startup" />
+105-->[androidx.emoji2:emoji2:1.2.0] /Users/zik/.gradle/caches/transforms-3/112feaf024ddff06c7ae5597d1b3b404/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+106            <meta-data
+106-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/zik/.gradle/caches/transforms-3/36ccc18de110e6e43a3d92ff6872b636/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+107                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+107-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/zik/.gradle/caches/transforms-3/36ccc18de110e6e43a3d92ff6872b636/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+108                android:value="androidx.startup" />
+108-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/zik/.gradle/caches/transforms-3/36ccc18de110e6e43a3d92ff6872b636/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+109            <meta-data
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+110                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+111                android:value="androidx.startup" />
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+112        </provider> <!-- Force DownloadParameters Network Job With retry Policy Until Its Success -->
+113        <service
+113-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:46:9-48:39
+114            android:name="com.edfapay.paymentcard.background_services.ReverseTransactionService"
+114-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:47:13-97
+115            android:exported="true" />
+115-->[com.github.edfapay.edfapay-plugin-android:card-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/caab4dc7da3dae824510a04fdaeed72f/transformed/jetified-card-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:48:13-36
+116
+117        <activity
+117-->[com.github.edfapay.edfapay-plugin-android:api-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/15129bd53a7f6a625c3e4c54545572a4/transformed/jetified-api-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:12:9-14:39
+118            android:name="com.edfapay.api.ui.ApiResponseActivity"
+118-->[com.github.edfapay.edfapay-plugin-android:api-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/15129bd53a7f6a625c3e4c54545572a4/transformed/jetified-api-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:13:13-66
+119            android:exported="true" />
+119-->[com.github.edfapay.edfapay-plugin-android:api-sdk:partner~tn-wesettle-SNAPSHOT] /Users/zik/.gradle/caches/transforms-3/15129bd53a7f6a625c3e4c54545572a4/transformed/jetified-api-sdk-partner~tn-wesettle-SNAPSHOT/AndroidManifest.xml:14:13-36
+120
+121        <uses-library
+121-->[androidx.window:window:1.0.0-beta04] /Users/zik/.gradle/caches/transforms-3/39f75e996b0923f35aa5c0a28daf503f/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+122            android:name="androidx.window.extensions"
+122-->[androidx.window:window:1.0.0-beta04] /Users/zik/.gradle/caches/transforms-3/39f75e996b0923f35aa5c0a28daf503f/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+123            android:required="false" />
+123-->[androidx.window:window:1.0.0-beta04] /Users/zik/.gradle/caches/transforms-3/39f75e996b0923f35aa5c0a28daf503f/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+124        <uses-library
+124-->[androidx.window:window:1.0.0-beta04] /Users/zik/.gradle/caches/transforms-3/39f75e996b0923f35aa5c0a28daf503f/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+125            android:name="androidx.window.sidecar"
+125-->[androidx.window:window:1.0.0-beta04] /Users/zik/.gradle/caches/transforms-3/39f75e996b0923f35aa5c0a28daf503f/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+126            android:required="false" />
+126-->[androidx.window:window:1.0.0-beta04] /Users/zik/.gradle/caches/transforms-3/39f75e996b0923f35aa5c0a28daf503f/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+127
+128        <activity
+128-->[com.google.android.gms:play-services-base:18.0.1] /Users/zik/.gradle/caches/transforms-3/ad14a8bf5cc9a72e87da62687b4f890d/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+129            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+129-->[com.google.android.gms:play-services-base:18.0.1] /Users/zik/.gradle/caches/transforms-3/ad14a8bf5cc9a72e87da62687b4f890d/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+130            android:exported="false"
+130-->[com.google.android.gms:play-services-base:18.0.1] /Users/zik/.gradle/caches/transforms-3/ad14a8bf5cc9a72e87da62687b4f890d/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+131            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+131-->[com.google.android.gms:play-services-base:18.0.1] /Users/zik/.gradle/caches/transforms-3/ad14a8bf5cc9a72e87da62687b4f890d/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+132
+133        <meta-data
+133-->[com.google.android.gms:play-services-basement:18.0.0] /Users/zik/.gradle/caches/transforms-3/822de6efc669c93a2bb711d49ef94508/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+134            android:name="com.google.android.gms.version"
+134-->[com.google.android.gms:play-services-basement:18.0.0] /Users/zik/.gradle/caches/transforms-3/822de6efc669c93a2bb711d49ef94508/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+135            android:value="@integer/google_play_services_version" />
+135-->[com.google.android.gms:play-services-basement:18.0.0] /Users/zik/.gradle/caches/transforms-3/822de6efc669c93a2bb711d49ef94508/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+136
+137        <service
+137-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:39:9-45:35
+138            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+138-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:40:13-88
+139            android:directBootAware="false"
+139-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:41:13-44
+140            android:enabled="@bool/enable_system_alarm_service_default"
+140-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:42:13-72
+141            android:exported="false" />
+141-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:43:13-37
+142        <service
+142-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:46:9-52:35
+143            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+143-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:47:13-84
+144            android:directBootAware="false"
+144-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:48:13-44
+145            android:enabled="@bool/enable_system_job_service_default"
+145-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:49:13-70
+146            android:exported="true"
+146-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:50:13-36
+147            android:permission="android.permission.BIND_JOB_SERVICE" />
+147-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:51:13-69
+148        <service
+148-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:53:9-59:35
+149            android:name="androidx.work.impl.foreground.SystemForegroundService"
+149-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:54:13-81
+150            android:directBootAware="false"
+150-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:55:13-44
+151            android:enabled="@bool/enable_system_foreground_service_default"
+151-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:56:13-77
+152            android:exported="false" />
+152-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:57:13-37
+153
+154        <receiver
+154-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:61:9-66:35
+155            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+155-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:62:13-88
+156            android:directBootAware="false"
+156-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:63:13-44
+157            android:enabled="true"
+157-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:64:13-35
+158            android:exported="false" />
+158-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:65:13-37
+159        <receiver
+159-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:67:9-77:20
+160            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+160-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:68:13-106
+161            android:directBootAware="false"
+161-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:69:13-44
+162            android:enabled="false"
+162-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:70:13-36
+163            android:exported="false" >
+163-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:71:13-37
+164            <intent-filter>
+164-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:73:13-76:29
+165                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+165-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:74:17-87
+165-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:74:25-84
+166                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+166-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:75:17-90
+166-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:75:25-87
+167            </intent-filter>
+168        </receiver>
+169        <receiver
+169-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:78:9-88:20
+170            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+170-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:79:13-104
+171            android:directBootAware="false"
+171-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:80:13-44
+172            android:enabled="false"
+172-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:81:13-36
+173            android:exported="false" >
+173-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:82:13-37
+174            <intent-filter>
+174-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:84:13-87:29
+175                <action android:name="android.intent.action.BATTERY_OKAY" />
+175-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:85:17-77
+175-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:85:25-74
+176                <action android:name="android.intent.action.BATTERY_LOW" />
+176-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:86:17-76
+176-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:86:25-73
+177            </intent-filter>
+178        </receiver>
+179        <receiver
+179-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:89:9-99:20
+180            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+180-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:90:13-104
+181            android:directBootAware="false"
+181-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:91:13-44
+182            android:enabled="false"
+182-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:92:13-36
+183            android:exported="false" >
+183-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:93:13-37
+184            <intent-filter>
+184-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:95:13-98:29
+185                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+185-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:96:17-83
+185-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:96:25-80
+186                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+186-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:97:17-82
+186-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:97:25-79
+187            </intent-filter>
+188        </receiver>
+189        <receiver
+189-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:100:9-109:20
+190            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+190-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:101:13-103
+191            android:directBootAware="false"
+191-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:102:13-44
+192            android:enabled="false"
+192-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:103:13-36
+193            android:exported="false" >
+193-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:104:13-37
+194            <intent-filter>
+194-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:106:13-108:29
+195                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+195-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:107:17-79
+195-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:107:25-76
+196            </intent-filter>
+197        </receiver>
+198        <receiver
+198-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:110:9-121:20
+199            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+199-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:111:13-88
+200            android:directBootAware="false"
+200-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:112:13-44
+201            android:enabled="false"
+201-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:113:13-36
+202            android:exported="false" >
+202-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:114:13-37
+203            <intent-filter>
+203-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:116:13-120:29
+204                <action android:name="android.intent.action.BOOT_COMPLETED" />
+204-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:117:17-79
+204-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:117:25-76
+205                <action android:name="android.intent.action.TIME_SET" />
+205-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:118:17-73
+205-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:118:25-70
+206                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+206-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:119:17-81
+206-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:119:25-78
+207            </intent-filter>
+208        </receiver>
+209        <receiver
+209-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:122:9-131:20
+210            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+210-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:123:13-99
+211            android:directBootAware="false"
+211-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:124:13-44
+212            android:enabled="@bool/enable_system_alarm_service_default"
+212-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:125:13-72
+213            android:exported="false" >
+213-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:126:13-37
+214            <intent-filter>
+214-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:128:13-130:29
+215                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+215-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:129:17-98
+215-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:129:25-95
+216            </intent-filter>
+217        </receiver>
+218        <receiver
+218-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:132:9-142:20
+219            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+219-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:133:13-78
+220            android:directBootAware="false"
+220-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:134:13-44
+221            android:enabled="true"
+221-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:135:13-35
+222            android:exported="true"
+222-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:136:13-36
+223            android:permission="android.permission.DUMP" >
+223-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:137:13-57
+224            <intent-filter>
+224-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:139:13-141:29
+225                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+225-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:140:17-88
+225-->[androidx.work:work-runtime:2.8.1] /Users/zik/.gradle/caches/transforms-3/092323538f92d4f13cd85f1069cef2cc/transformed/work-runtime-2.8.1/AndroidManifest.xml:140:25-85
+226            </intent-filter>
+227        </receiver>
+228
+229        <service
+229-->[androidx.room:room-runtime:2.5.0] /Users/zik/.gradle/caches/transforms-3/0b11dd7d9b1e69376a0a85f716ef690a/transformed/room-runtime-2.5.0/AndroidManifest.xml:24:9-28:63
+230            android:name="androidx.room.MultiInstanceInvalidationService"
+230-->[androidx.room:room-runtime:2.5.0] /Users/zik/.gradle/caches/transforms-3/0b11dd7d9b1e69376a0a85f716ef690a/transformed/room-runtime-2.5.0/AndroidManifest.xml:25:13-74
+231            android:directBootAware="true"
+231-->[androidx.room:room-runtime:2.5.0] /Users/zik/.gradle/caches/transforms-3/0b11dd7d9b1e69376a0a85f716ef690a/transformed/room-runtime-2.5.0/AndroidManifest.xml:26:13-43
+232            android:exported="false" />
+232-->[androidx.room:room-runtime:2.5.0] /Users/zik/.gradle/caches/transforms-3/0b11dd7d9b1e69376a0a85f716ef690a/transformed/room-runtime-2.5.0/AndroidManifest.xml:27:13-37
+233
+234        <receiver
+234-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+235            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+235-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+236            android:directBootAware="false"
+236-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+237            android:enabled="true"
+237-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+238            android:exported="true"
+238-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+239            android:permission="android.permission.DUMP" >
+239-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+240            <intent-filter>
+240-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+241                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+241-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+241-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+242            </intent-filter>
+243            <intent-filter>
+243-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+244                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+244-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+244-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+245            </intent-filter>
+246            <intent-filter>
+246-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+247                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+247-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+247-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+248            </intent-filter>
+249            <intent-filter>
+249-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+250                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+250-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+250-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/zik/.gradle/caches/transforms-3/bc48269bf4cf25c7bbf328756538d058/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+251            </intent-filter>
+252        </receiver>
+253    </application>
+254
+255</manifest>

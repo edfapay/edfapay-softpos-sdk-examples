@@ -1,0 +1,1058 @@
+settings:
+
+  terminal:
+
+    terminal:
+      tag_9F1A:
+        value: "0682"
+        description: "Terminal Country Code"
+      tag_9F1E:
+        value: "1122334455667788"
+        description: "Interface Device (IFD) Serial Number"
+      tag_9F33:
+        value: "0048C8"
+#        value: "0040C8"
+        description: "Terminal Capabilities (Follow EMV Book 4 annex A2 to fill 3 bytes) according to ICS value"
+      tag_9F35:
+        value: "21"
+        description: "Terminal Type (Follow EMV Book 4 annex A1 to fill 1 byte) according to ICS value"
+      tag_9F40:
+        value: "000000A000"
+        description: "Additional Terminal Capabilities (Follow EMV Book4 annex A2) according to ICS value"
+      tag_9F66:
+        value: "24C04000"
+        description: "Terminal Transaction Qualifiers (TTQ)"
+      tag_9F72:
+        value: "12345678"
+        description: "PURE Memory Slot Identifier - Required only if option 1 or 2 are supported"
+      tag_9F76:
+        value: "010203040506070809"
+        description: "PURE Terminal Transacion Data"
+      tag_D000:
+        value: count_application
+        type: function
+        description: "Number of supported AIDs"
+      tag_DFDF16:
+        value: "00000080"
+        description: "Maximum length of issuer script"
+      tag_DFDF33:
+        value: "56575A5F205F245F309F6B"
+      tag_DFDF52:
+        value: "26004043F9"
+        description: "Contactless Application/Kernel Capabilities (Follow PURE Contactless Reader Test Environment documentation 1.7)"
+      tag_DFDF61:
+        value: "10"
+        description: "Contactless POS Implementation Options (Follow PURE Contactless Reader Test Environment documentation 1.6.1)"
+      tag_DFDF63:
+        value: "0010"
+        description: "PURE POS Timeout (Long tap) - Mandatory if option 3 supported"
+      tag_DFDF64:
+        value: "0010"
+        description: "PURE POS Timeout (Transaction Result Display)"
+      tag_DFDF65:
+        value: "90"
+        description: "Transaction Type value for Application Authentication Transactions (AAT) - Present if option 4 supported"
+      tag_DFDF68:
+        value: "8295999A9CCF5F255F2A5F349F019F029F039F109F159F1A9F219F269F279F339F349F359F369F379F5B"
+        description: "List of tags to send in Online request"
+      tag_DFDF69:
+        value: "00"
+        description: "PURE Autorun activated"
+
+  application:
+
+    App1_00:
+      tag_9C:
+        value: "00"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A000000228"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App1_20:
+      tag_9C:
+        value: "20"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A000000228"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App2_00:
+      tag_9C:
+        value: "00"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A0000002281010"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App2_20:
+      tag_9C:
+        value: "20"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A0000002281010"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App3_00:
+      tag_9C:
+        value: "00"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A0000002282010"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App3_20:
+      tag_9C:
+        value: "20"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A0000002282010"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App4_00:
+      tag_9C:
+        value: "00"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A00000022820101010"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App4_20:
+      tag_9C:
+        value: "20"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A00000022820101010"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App5_00:
+      tag_9C:
+        value: "00"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A000000732100123"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App5_20:
+      tag_9C:
+        value: "20"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A000000732100123"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+
+    App6_00:
+      tag_9C:
+        value: "00"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A0000007362010"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App6_20:
+      tag_9C:
+        value: "20"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A0000007362010"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App7_00:
+      tag_9C:
+        value: "00"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A0000007363010"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+
+    App7_20:
+      tag_9C:
+        value: "20"
+        description: "Transaction Type"
+      tag_5F2A:
+        value: "0682"
+        description: "Transaction Currency Code"
+      tag_5F36:
+        value: "02"
+        description: "Transaction Currency Exponent"
+      tag_9F01:
+        value: "112233445566"
+        description: "Acquirer Identifier"
+      tag_9F06:
+        value: "A0000007363010"
+        description: "Terminal Application Identifier (AID)"
+      tag_9F09:
+        value: "0001"
+        description: "Terminal Application Version Number"
+      tag_9F15:
+        value: "1122"
+        description: "Merchant Category Code"
+      tag_9F16:
+        value: "A1A2A3A4A5A6A7A8A9B1B2B3B4B5B6"
+        description: "Merchant Identifier"
+      tag_9F1B:
+        value: "000000006000"
+        description: "Terminal Floor Limit"
+      tag_DF810C:
+        value: "2D"
+        description: "Kernel Identifier"
+      tag_9F4E:
+        value: "46494D45"
+        description: "Merchant Name and Location"
+      tag_DF00:
+        value: "000000999999"
+        description: "Reader Contactless Transaction Limit"
+      tag_DF01:
+        value: "000000010000"
+        description: "Reader CVM Required Limit"
+      tag_DF02:
+        value: "000000005000"
+        description: "Reader Contactless Floor Limit"
+      tag_DF8120:
+        value: "0000000000"
+        description: "Terminal Action Code - Default"
+      tag_DF8121:
+        value: "0000000000"
+        description: "Terminal Action Code - Denial"
+      tag_DF8122:
+        value: "0000000000"
+        description: "Terminal Action Code - Online"
+      tag_DFDF02:
+        value: "9F029F039F26829F369F279F109F1A955F2A9A9C9F379F359F34845F34C79F339F739F779F4557"
+        description: "Additional Tag Object List (ATOL)"
+      tag_DFDF03:
+        value: "82959F7784"
+        description: "Authentication Transaction Data Tag Object List (ATDTOL) - Present if option 4 supported"
+      tag_DFDF18:
+        value: "9F3704"
+        description: "Default Dynamic Data Authentication Data Object List (DDOL) - Present if option 4 supported"
+      tag_DFDF54:
+        value: "01"
+        description: "Status Check Supported flag"
+      tag_DFDF55:
+        value: "01"
+        description: "Zero Amount Allowed flag"
+      tag_DFDF62:
+        value: "8C57"
+        description: "Mandatory Tag Object List (MTOL)"
+

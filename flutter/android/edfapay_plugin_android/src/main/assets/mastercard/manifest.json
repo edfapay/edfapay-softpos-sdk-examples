@@ -1,0 +1,59 @@
+// #### Version 2.0 (<BundleVersion>.<fileVersion>)
+{ // [0] Mac, [1] Windows
+  "MANIFEST": {
+    // Profiles  ProfileReader.json
+    "readerProfile": [
+      "44414a97f58b1678eeb48af3336f694b002cfbaf",
+      "7eb2954b959c991bb84cab8fcaa7eaec0b53b0da"
+    ],
+    // ProfileData.json
+    "readerData": [
+      "040773123e08fb84b229e92964ecd8789ebbf068",
+      "fbb8e05b2122d7a2a5f687aadfc937d6f6204dce"
+    ],
+    // ProfileReaderInitialise.json
+    "readerInit": [
+      "ef132bcebcb94cdfdf311b4acaf60b5e56bd9a4e",
+      "496580d7502efece0ab2e0ba243f775a8273093a"
+    ],
+    // Data-Dictionaries
+    "v3DataDictionary": [
+      "9f9d643413009e817a727a8c6bd1c1f16c33cb34",
+      "42b53461af7738e0a18fb6d4fe987b5d5322286b"
+    ],
+    "terminalDictionary": [
+      "a2e998cf8dbd00f1429f7dd2cd9d5f297a33944b",
+      "365877026dab75530ecba59341666ef06ee22870"
+    ],
+    // ReferanceTags.json
+    "referenceTags": [
+      "a10fae0d07dcb7c2584e7633b1ac2066b94efcca",
+      "ab40d6ab9ff702ec6b62ba32741cab996f632f35"
+    ],
+    // Support files CAPublicKeys.json
+    "capKeys": [
+      "d0fa0058985506d2cea6be14b00e68c8bb04c670",
+      "8a14ad622d9cbfe205e0faffc82eb3d9906fd357"
+    ],
+    // CertificateRevocationList.json
+    "certificateRevocationList": [
+      "119b401d04b932106912dbb78dbcd5bfdb224818",
+      "5bc58e88d8e09b6fa2b4f5577cf4f0e62c529f03"
+    ],
+    // DefaultTerminalData.json
+    "defaultTerminalData": [
+      "b4f5550d246b01477d9d3ddc33ae603989813c72",
+      "ed65498d983afcffd8b51fb5cd8f9f72a4c975df"
+    ],
+    // ExceptionFile.json
+    "exceptionFile": [
+      "7508bd3602125a338f7e5abb78ce25787c27fe88",
+      "9f22e8f18413a8b8e7776b6c0d43e586d85a92e6"
+    ],
+    // AdditionalInfo.json
+    "additionalInfo": [
+      "4528a96fb175e130d6bf8890a109a3d29c69f2ff",
+      "c75911469460efaaa1536a5af20efcae67c97a5d"
+    ]
+  }
+}

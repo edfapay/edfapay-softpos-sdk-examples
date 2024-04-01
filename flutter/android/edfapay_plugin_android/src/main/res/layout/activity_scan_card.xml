@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/view1"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp">
+
+            <com.edfapay.paymentcard.ui.PosStatusIndicator
+                android:id="@+id/lightIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/view2"
+            android:layout_weight="1.5"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_contctls" />
+
+        <LinearLayout
+            android:id="@+id/view3"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/black"
+                android:id="@+id/txt_scan_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_4sdp"
+                android:text="@string/place_your_card"
+                android:textStyle="bold"
+                android:textSize="@dimen/_20ssp" />
+
+            <TextView
+                android:textColor="@color/black"
+                android:id="@+id/txt_scan_status_tr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_4sdp"
+                android:text="@string/place_your_cardTr"
+                android:textStyle="bold"
+                android:textSize="@dimen/_22ssp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/view4"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:textColor="@color/black"
+                    android:id="@+id/txt_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero_state"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_30ssp" />
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:background="@color/primary_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_5sdp"/>
+                    <TextView
+                        android:textColor="@color/white"
+                        android:id="@+id/txt_amountCurrency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_4sdp"
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.2"
+                        android:text="@string/default_currency" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_20sdp"/>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:id="@+id/view_6"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/red"
+                android:textSize="@dimen/_8ssp"
+                android:text="Time Out"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:background="@color/red"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"/>
+
+            <com.edfapay.paymentcard.utils.countdownview.CountdownView
+                android:layout_centerInParent="true"
+                android:id="@+id/timoutTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:isHideTimeBackground="true"
+                app:isShowDay="false"
+                app:isShowHour="false"
+                app:isShowMinute="false"
+                app:timeBgBorderColor="@color/black"
+                app:timeBgBorderRadius="@dimen/_5sdp"
+                app:isShowSecond="true"
+                app:isShowMillisecond="true"
+                app:timeTextColor="#000000"
+                app:timeTextSize="@dimen/_12ssp"
+                app:isTimeTextBold="true" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/view5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <include
+                android:layout_centerInParent="true"
+                android:id="@+id/schemes" layout="@layout/layout_supported_payment_schemes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:background="@color/white"
+        android:visibility="gone"
+        android:padding="@dimen/_30sdp"
+        android:layout_centerInParent="true"
+        android:id="@+id/schemeAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"/>
+
+    <include
+        android:visibility="gone"
+        android:id="@+id/viewReqTimeout"
+        layout="@layout/view_timeout" />
+
+</RelativeLayout>
