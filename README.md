@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # flutter_edfapay_softpos_sdk_example
 
 Demonstrates how to use the flutter_edfapay_softpos_sdk plugin.
@@ -27,4 +26,3 @@ Select platform below and follow the steps to start integration.
 
 > ### [React Native (Android)](/react_native#react-native-edfapay-softpos-sdk)
 
->>>>>>> f26210dc30f6e31f401d60faf162fecaf8dac94f
