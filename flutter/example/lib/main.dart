@@ -1,123 +1,3 @@
-
-# flutter-edfapay-softpos-sdk
-## Installation
-
-#### 1: Configuration (Important)
-Its is important to add the jipack support and authorization to your project android module, It's allows the gradle to download the native dependency from jitpack.
-<br>**Place the below code snippit to `./android/app/build.gradle` file**
-```gradle
-repositories.maven{
-  url "https://jitpack.io"
-  credentials{
-      username "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
-  } 
-}
-```
-#### 2: Install flutter-edfapay-softpos-sdk (Important)
-```js
-flutter pub add flutter-edfapay-softpos-sdk
-```
-or add the dependecy in project `pubspec.yaml`
-```dart
-dependencies:
-flutter-edfapay-softpos-sdk: any
-```
-
-## Usage [(Example)](#example)
-
-
-#### 1: Import (Important)
-
-```dart
-import 'package:flutter_edfapay_softpos_sdk/flutter_edfapay_softpos_sdk.dart';
-```
-
-
-
-#### 2: Initialization (Important)
-```dart
-const authCode="You Sdk Login Auth Code"
-
-EdfaPayPlugin.initiate(authCode).then((value){
-if(value == false){
-// Handle initialization failed
-// inform the developer or user initializing failed
-}else{
-// Allow user to start payment process in next step 
-}
-});
-```
-
-
-
-#### 3: Setting Theme (Optional)
-```dart
-final logo = "base64 of image";
-// final logo = await assetsBase64('path to image asset');
-
-EdfaPayPlugin.theme
-    .setButtonBackgroundColor("#06E59F")
-.setButtonTextColor("#000000")
-    .setPoweredByImage(logo)
-.setHeaderImage(logo);
-```
-
-> There is an helper method in SDK to convert image asset to base64
-> ```dart
-> import 'package:flutter_edfapay_softpos_sdk/helpers.dart';
-> .
-> .
-> .
-> final logo = await assetsBase64('path to image asset');
-> ```
-
-
-#### 4: Pay
-```dart
-
-final params = TxnParams(
-    amount: "10.000",
-    transactionType: TransactionType.purchase,
-);
-
-EdfaPayPlugin.pay(
-    params,
-    onPaymentProcessComplete: (status, result){
-      if(status){
-        print(' >>> [ Success ]');
-        print(' >>> [ ${jsonEncode(result)} ]');
-      }else{
-        print(' >>> [ Failed ]');
-        print(' >>> [ ${jsonEncode(result)} ]');
-      }
-    },
-    onServerTimeOut: (){
-      print('>>> Server Timeout');
-      print(' >>> The request timeout while performing transaction at backend');
-    },
-    onScanCardTimeOut: (){
-      print('>>> Scan Card Timeout');
-      print(' >>> The scan card timeout, no any card tap on device');
-    },
-    onCancelByUser: (){
-      print('>>> Canceled By User');
-      print(' >>> User have cancel the scanning/payment process on its own choice');
-    },
-    onError: (error){
-      print('>>> Exception');
-      print(' >>> "Scanning/Payment process through an exception, Check the logs');
-      print('  >>> ${error.toString()}');
-    }
-);
-```
-
-
-
-## Example
-<details>
-  <summary> Click to Expand/Collapes </summary>
-
-```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_edfapay_softpos_sdk/enums/TransactionType.dart';
@@ -125,12 +5,11 @@ import 'package:flutter_edfapay_softpos_sdk/flutter_edfapay_softpos_sdk.dart';
 import 'package:flutter_edfapay_softpos_sdk/helpers.dart';
 import 'package:flutter_edfapay_softpos_sdk/models/TxnParams.dart';
 import 'package:flutter_edfapay_softpos_sdk_example/helper_methods.dart';
+import 'package:hexcolor/hexcolor.dart';
 
-/* add the plugin for below: https://pub.dev/packages/hexcolor */
-import 'package:hexcolor/hexcolor.dart'; 
 
-const logoPath = "path to logo asset";
-const authCode = "You Sdk Login Auth Code";
+const authCode = "a3Jpc0BnbWFpbC5jb206MTIzNDU2Nzg=";
+const logoPath = "assets/images/edfa_logo.png";
 const amountToPay = "01.010";
 
 void main() {
@@ -243,7 +122,7 @@ class _MyAppState extends State<MyApp> {
 
   pay() async{
     if(!_edfaPluginInitiated){
-      print("Edfapay plugin not initialized.");
+      toast("Edfapay plugin not initialized.");
       return;
     }
 
@@ -251,30 +130,30 @@ class _MyAppState extends State<MyApp> {
         amount: amountToPay,
         transactionType: TransactionType.purchase,
     );
-    
+
     EdfaPayPlugin.pay(
         params,
         onPaymentProcessComplete: (status, result){
-          print("Card Payment Process Completed");
+          toast("Card Payment Process Completed");
           print('>>> Payment Process Complete');
         },
         onServerTimeOut: (){
-          print("Server Request Timeout");
+          toast("Server Request Timeout");
           print('>>> Server Timeout');
           print(' >>> The request timeout while performing transaction at backend');
         },
         onScanCardTimeOut: (){
-          print("Card Scan Timeout");
+          toast("Card Scan Timeout");
           print('>>> Scan Card Timeout');
           print(' >>> The scan card timeout, no any card tap on device');
         },
         onCancelByUser: (){
-          print("Cancel By User");
+          toast("Cancel By User");
           print('>>> Canceled By User');
           print(' >>> User have cancel the scanning/payment process on its own choice');
         },
         onError: (Exception error){
-          print(error.toString());
+          toast(error.toString());
           print('>>> Exception');
           print(' >>> "Scanning/Payment process through an exception, Check the logs');
           print('  >>> ${error.toString()}');
@@ -282,12 +161,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-```
-
-</details>
-
-## License
-
-MIT
-
----

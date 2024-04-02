@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flutter_edfapay_plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/flutter_edfapay_plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flutter_edfapay_plugin.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/flutter_edfapay_plugin.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flutter_edfapay_plugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/flutter_edfapay_plugin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flutter_edfapay_plugin.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/flutter_edfapay_plugin.unitTest.iml" />
     </modules>
   </component>
 </project>
