@@ -20,7 +20,11 @@ flutter pub add flutter-edfapay-softpos-sdk
 or add the dependecy in project `pubspec.yaml`
 ```dart
 dependencies:
+<<<<<<< HEAD
 flutter-edfapay-softpos-sdk: any
+=======
+  flutter-edfapay-softpos-sdk: any
+>>>>>>> f26210dc30f6e31f401d60faf162fecaf8dac94f
 ```
 
 ## Usage [(Example)](#example)
@@ -36,6 +40,7 @@ import 'package:flutter_edfapay_softpos_sdk/flutter_edfapay_softpos_sdk.dart';
 
 #### 2: Initialization (Important)
 ```dart
+<<<<<<< HEAD
 const authCode="You Sdk Login Auth Code"
 
 EdfaPayPlugin.initiate(authCode).then((value){
@@ -45,6 +50,17 @@ if(value == false){
 }else{
 // Allow user to start payment process in next step 
 }
+=======
+const authCode="You Sdk Login Auth Code";
+
+EdfaPayPlugin.initiate(authCode).then((value){
+  if(value == false){
+    // Handle initialization failed
+    // inform the developer or user initializing failed
+  }else{
+    // Allow user to start payment process in next step 
+  }  
+>>>>>>> f26210dc30f6e31f401d60faf162fecaf8dac94f
 });
 ```
 
@@ -57,11 +73,19 @@ final logo = "base64 of image";
 
 EdfaPayPlugin.theme
     .setButtonBackgroundColor("#06E59F")
+<<<<<<< HEAD
 .setButtonTextColor("#000000")
     .setPoweredByImage(logo)
 .setHeaderImage(logo);
 ```
 
+=======
+    .setButtonTextColor("#000000")
+    .setPoweredByImage(logo)
+    .setHeaderImage(logo);
+```
+ 
+>>>>>>> f26210dc30f6e31f401d60faf162fecaf8dac94f
 > There is an helper method in SDK to convert image asset to base64
 > ```dart
 > import 'package:flutter_edfapay_softpos_sdk/helpers.dart';
@@ -116,7 +140,11 @@ EdfaPayPlugin.pay(
 ## Example
 <details>
   <summary> Click to Expand/Collapes </summary>
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> f26210dc30f6e31f401d60faf162fecaf8dac94f
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -290,4 +318,8 @@ class _MyAppState extends State<MyApp> {
 
 MIT
 
+<<<<<<< HEAD
 ---
+=======
+---
+>>>>>>> f26210dc30f6e31f401d60faf162fecaf8dac94f
