@@ -9,8 +9,3 @@ Select platform below and follow the steps to start integration.
 
 > ### [React Native (Android)](/react_native#react-native-edfapay-softpos-sdk)
 
-## License
-
-MIT
-
----
