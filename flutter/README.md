@@ -119,10 +119,10 @@ EdfaPayPlugin.pay(
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_edfapay_softpos_sdk/enums/TransactionType.dart';
+import 'package:flutter_edfapay_softpos_sdk/enums/transaction_type.dart';
 import 'package:flutter_edfapay_softpos_sdk/flutter_edfapay_softpos_sdk.dart';
 import 'package:flutter_edfapay_softpos_sdk/helpers.dart';
-import 'package:flutter_edfapay_softpos_sdk/models/TxnParams.dart';
+import 'package:flutter_edfapay_softpos_sdk/models/txn_params.dart';
 import 'package:flutter_edfapay_softpos_sdk_example/helper_methods.dart';
 
 /* add the plugin for below: https://pub.dev/packages/hexcolor */
