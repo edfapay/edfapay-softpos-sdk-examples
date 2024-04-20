@@ -1,15 +1,12 @@
-group 'com.edfapay.fplugin'
-version '1.0-SNAPSHOT'
-
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '1.8.22'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath 'com.android.tools.build:gradle:7.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -18,46 +15,21 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url "https://jitpack.io"
+            credentials { username "jp_i9ed2av1lj1kjnqpgobpeh0e7k" }
+        }
     }
 }
 
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-
-android {
-    compileSdkVersion 33
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
-
-    defaultConfig {
-        minSdkVersion 29
-    }
-    dependencies {
-//        implementation 'com.github.edfapay:edfapay-plugin-android:1.0.2'
-        implementation 'com.github.edfapay:edfapay-plugin-android:partner~tn-wesettle-SNAPSHOT'
-//        implementation 'com.github.edfapay:edfapay-plugin-android:flavor-test-SNAPSHOT'
-        implementation 'androidx.appcompat:appcompat:1.6.1'
-        implementation 'com.google.code.gson:gson:2.10.1'
-    }
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
 }
 
-configurations.configureEach {
-//    exclude group: "com.github.edfapay.emv", module: "mastercard-debug"
-    exclude group: "com.github.edfapay.emv", module: "mastercard-release"
-
-    exclude group: "com.github.edfapay.emv", module: "discovery-corec-release"
-    exclude group: "com.github.edfapay.emv", module: "discovery-readerc-release"
-
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
