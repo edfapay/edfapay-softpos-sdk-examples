@@ -253,7 +253,7 @@ class _MyAppState extends State<MyApp> {
     
     EdfaPayPlugin.pay(
         params,
-        onPaymentProcessComplete: (status, result){
+        onPaymentProcessComplete: (status, code, result){
           print("Card Payment Process Completed");
           print('>>> Payment Process Complete');
         },
