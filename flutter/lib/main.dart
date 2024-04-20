@@ -8,7 +8,7 @@ import 'package:flutter_edfapay_softpos_sdk_example/helper_methods.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 
-const authCode = "a3Jpc0BnbWFpbC5jb206MTIzNDU2Nzg=";
+const authCode = "Your SDK Auth Code";
 const logoPath = "assets/images/edfa_logo.png";
 const amountToPay = "01.010";
 
