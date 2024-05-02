@@ -36,10 +36,7 @@ export default function App() {
 
       <View style={styles.buttonContainer}>
         <Button color="#06E59F" disabled={!initResult} title={"Pay "+amountToPay} onPress={() => {
-          pay((status) => {
-            var title = status ? "Success" : "Fail"
-            dialog.alert(title, "Check the 'result/response' printed in console")
-          })
+          pay()
         }} />
       </View>
     </View>
@@ -69,13 +66,13 @@ function initiateSdk(completion: ((status:boolean) => void)){
 }
 
 
-function pay(completion: ((status:boolean) => void)){
+function pay(){
   console.log(`initiate payment with amount: ${amountToPay}`)
   var params = new EdfaPayPlugin.TxnParams(amountToPay)
 
-  const onPaymentProcessComplete = (status:boolean, transaction:Transaction) => {
-    dialog.alert("Payment Process Complete", "")
-    completion(status)
+  const onPaymentProcessComplete = (status:boolean, code:string, transaction:Transaction) => {
+    var title = status ? `Success ${code}` : `Fail ${code}`
+    dialog.alert(title, "Check the 'result/response' printed in console")
   }
 
   const onServerTimeOut = () => {
