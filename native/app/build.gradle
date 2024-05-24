@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.edfapay.softpos.tools' version '0.0.7'
+}
+
+android {
+    namespace 'com.edfapay.sdk.sample'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.edfapay.sdk.sample"
+        targetSdk 34
+        minSdk 29
+
+        versionCode 1
+        versionName "1.0"
+
+        aarMetadata {
+            minCompileSdk = 29
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    edfapay{
+        softpos{
+            // Replace partnerCode value with your partner code
+            def partnerCode = "706172746E65727E73612D65646661706179"
+            install(partnerCode)
+        }
+    }
+}
+
+
+
+
+configurations.configureEach {
+//    exclude group: "com.github.edfapay.emv", module: "mastercard-debug"
+    exclude group: "com.github.edfapay.emv", module: "mastercard-release"
+
+    exclude group: "com.github.edfapay.emv", module: "discovery-corec-release"
+    exclude group: "com.github.edfapay.emv", module: "discovery-readerc-release"
+
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
