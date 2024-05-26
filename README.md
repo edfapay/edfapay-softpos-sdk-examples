@@ -1,5 +1,5 @@
-.
-# react-native-edfapay-softpos-sdk
+# React-Native EdfaPay SoftPos SDK
+
 ## Installation
 > [!IMPORTANT]
 > ### Configure Repository
