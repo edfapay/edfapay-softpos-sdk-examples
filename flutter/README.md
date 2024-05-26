@@ -1,67 +1,58 @@
 # EdfaPay SoftPos SDK
 ## Installation
-
-### 1: Configuration (Important)
-Its is important to add the jipack support and authorization to your project android module, It's allows the gradle to download the native dependency from jitpack.
-<br>**Place the below code snippit to `./android/app/build.gradle` file**
-```gradle
-repositories.maven{
-  url "https://jitpack.io"
-  credentials{
-      username "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
-  } 
-}
-```
-
-### 2: Configure Partner Code  (Important)
-The partner code will be provided by EdfaPay
-Developer should set permanent `EDFAPAY_PARTNER` variable to system/user level environment variables.
-
-**Setting Environment Variable**
-
-<details>
-<summary> MacOS/Linux </summary>
-
-_Below are the instruction to add permanent environment variable_
-
+> [!IMPORTANT]
+> ### Configure Repository
+> Its is important to add the jipack support and authorization to your project android module, It's allows the gradle to download the native dependency from jitpack.
+> <br>**Place the below code snippit to `./android/app/build.gradle` file**
+> ```gradle
+> repositories.maven{
+>   url "https://jitpack.io"
+>   credentials{
+>       username "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
+>   } 
+> }
 > ```
+
+
+> [!IMPORTANT]
+> ### Configure Partner Code
+> The partner code will be provided by EdfaPay
+> Developer should set permanent `EDFAPAY_PARTNER` variable to system/user level environment variables.
+>
+> **Setting Environment Variable**
+> <details>
+> <summary> MacOS/Linux </summary>
+>
 > Permanent environment variables should be added to the .bash_profile file:
->  1. Open the .bash_profile file with a text editor of your choice. (create file if not exist)
->  2. Scroll down to the end of the .bash_profile file.
->  3. Copy below text and paste to a new line. (replace `your partner code` with actual value received from `EdfaPay`)
->       - export EDFAPAY_PARTNER=your partner code
->  4. Save changes you made to the .bash_profile file.
->  5. Execute the new .bash_profile by either restarting the machine or running command below:
+> 1. Open the .bash_profile file with a text editor of your choice. (create file if not exist)
+> 2. Scroll down to the end of the .bash_profile file.
+> 3. Copy below text and paste to a new line. (replace `your partner code` with actual value received from `EdfaPay`)
+>     - export EDFAPAY_PARTNER=your partner code
+> 4. Save changes you made to the .bash_profile file.
+> 5. Execute the new .bash_profile by either restarting the machine or running command below:
 >       - source ~/.bash-profile
-> ```
-</details>
-
-
-<details>
-<summary> Windows </summary>
-
-_Below are the instruction to add permanent environment variable_
-
-> ```
+> </details>
+> <details>
+> <summary> Windows </summary>
+>
 > 1. Open the link below:
->      - https://phoenixnap.com/kb/windows-set-environment-variable#ftoc-heading-4
+>     - https://phoenixnap.com/kb/windows-set-environment-variable#ftoc-heading-4
 > 2. Make sure below:
->      - Variable name should be `EDFAPAY_PARTNER`
->      - Variable value should be `your partner code` received from `EdfaPay`
+>     - Variable name should be `EDFAPAY_PARTNER`
+>     - Variable value should be `your partner code` received from `EdfaPay`
+> </details>
+
+
+> [!IMPORTANT]
+> ### Install flutter-edfapay-softpos-sdk
+> ```terminal
+> flutter pub add flutter-edfapay-softpos-sdk
 > ```
-</details>
-
-
-
-### 3: Install flutter-edfapay-softpos-sdk (Important)
-```js
-flutter pub add flutter-edfapay-softpos-sdk
-```
-or add the dependecy in project `pubspec.yaml`
-```dart
-dependencies:
-  flutter-edfapay-softpos-sdk: any
-```
+> or add the dependecy in project `pubspec.yaml`
+> ```yaml
+> dependencies:
+>   flutter-edfapay-softpos-sdk: any
+> ```
 
 ## Usage [(Example)](#example)
 
