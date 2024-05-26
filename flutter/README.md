@@ -1,7 +1,7 @@
 # EdfaPay SoftPos SDK
 ## Installation
 
-#### 1: Configuration (Important)
+### 1: Configuration (Important)
 Its is important to add the jipack support and authorization to your project android module, It's allows the gradle to download the native dependency from jitpack.
 <br>**Place the below code snippit to `./android/app/build.gradle` file**
 ```gradle
@@ -12,7 +12,48 @@ repositories.maven{
   } 
 }
 ```
-#### 2: Install flutter-edfapay-softpos-sdk (Important)
+
+### 2: Configure Partner Code  (Important)
+The partner code will be provided by EdfaPay
+Developer should set permanent `EDFAPAY_PARTNER` variable to system/user level environment variables.
+
+**Setting Environment Variable**
+
+<details>
+<summary> MacOS/Linux </summary>
+
+_Below are the instruction to add permanent environment variable_
+
+> ```
+> Permanent environment variables should be added to the .bash_profile file:
+>  1. Open the .bash_profile file with a text editor of your choice. (create file if not exist)
+>  2. Scroll down to the end of the .bash_profile file.
+>  3. Copy below text and paste to a new line. (replace `your partner code` with actual value received from `EdfaPay`)
+>       - export EDFAPAY_PARTNER=your partner code
+>  4. Save changes you made to the .bash_profile file.
+>  5. Execute the new .bash_profile by either restarting the machine or running command below:
+>       - source ~/.bash-profile
+> ```
+</details>
+
+
+<details>
+<summary> Windows </summary>
+
+_Below are the instruction to add permanent environment variable_
+
+> ```
+> 1. Open the link below:
+>      - https://phoenixnap.com/kb/windows-set-environment-variable#ftoc-heading-4
+> 2. Make sure below:
+>      - Variable name should be `EDFAPAY_PARTNER`
+>      - Variable value should be `your partner code` received from `EdfaPay`
+> ```
+</details>
+
+
+
+### 3: Install flutter-edfapay-softpos-sdk (Important)
 ```js
 flutter pub add flutter-edfapay-softpos-sdk
 ```
@@ -28,7 +69,7 @@ dependencies:
 #### 1: Import (Important)
 
 ```dart
-import 'package:flutter_edfapay_softpos_sdk/flutter_edfapay_softpos_sdk.dart';
+import 'package:flutter_edfapay_softpos_sdk/edfapay_softpos_sdk.dart';
 ```
 
 
@@ -37,7 +78,10 @@ import 'package:flutter_edfapay_softpos_sdk/flutter_edfapay_softpos_sdk.dart';
 ```dart
 const authCode="You Sdk Login Auth Code";
 
-EdfaPayPlugin.initiate(authCode).then((value){
+EdfaPayPlugin.initiate(
+    authCode: authCode,
+    environment: Env.PRODUCTION // Check Env.*
+).then((value){
     if(value == false){
     // Handle initialization failed
     // inform the developer or user initializing failed
@@ -63,10 +107,6 @@ EdfaPayPlugin.theme
 
 > There is an helper method in SDK to convert image asset to base64
 > ```dart
-> import 'package:flutter_edfapay_softpos_sdk/helpers.dart';
-> .
-> .
-> .
 > final logo = await assetsBase64('path to image asset');
 > ```
 
@@ -112,24 +152,21 @@ EdfaPayPlugin.pay(
 
 
 
-## Example
+## [Example](https://pub.dev/packages/flutter_edfapay_softpos_sdk/example)
 <details>
   <summary> Click to Expand/Collapes </summary>
 
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_edfapay_softpos_sdk/enums/transaction_type.dart';
-import 'package:flutter_edfapay_softpos_sdk/flutter_edfapay_softpos_sdk.dart';
-import 'package:flutter_edfapay_softpos_sdk/helpers.dart';
-import 'package:flutter_edfapay_softpos_sdk/models/txn_params.dart';
-import 'package:flutter_edfapay_softpos_sdk_example/helper_methods.dart';
+import 'package:flutter_edfapay_softpos_sdk/edfapay_softpos_sdk.dart';
 
 /* add the plugin for below: https://pub.dev/packages/hexcolor */
-import 'package:hexcolor/hexcolor.dart'; 
+import 'package:hexcolor/hexcolor.dart';
 
-const logoPath = "path to logo asset";
-const authCode = "You Sdk Login Auth Code";
+
+const authCode = "Auth_Code provided by EdfaPay ";
+const logoPath = "assets/images/edfa_logo.png";
 const amountToPay = "01.010";
 
 void main() {
@@ -222,7 +259,10 @@ class _MyAppState extends State<MyApp> {
 
 
   initiate() async{
-    EdfaPayPlugin.initiate(authCode).then((value){
+EdfaPayPlugin.initiate(
+    authCode: authCode,
+    environment: Env.UAT
+).then((value){
       setState(() {
         _edfaPluginInitiated = value;
       });
@@ -242,7 +282,7 @@ class _MyAppState extends State<MyApp> {
 
   pay() async{
     if(!_edfaPluginInitiated){
-      print("Edfapay plugin not initialized.");
+      print('>>> Edfapay plugin not initialized.');
       return;
     }
 
@@ -250,30 +290,25 @@ class _MyAppState extends State<MyApp> {
         amount: amountToPay,
         transactionType: TransactionType.purchase,
     );
-    
+
     EdfaPayPlugin.pay(
         params,
         onPaymentProcessComplete: (status, code, result){
-          print("Card Payment Process Completed");
           print('>>> Payment Process Complete');
         },
         onServerTimeOut: (){
-          print("Server Request Timeout");
           print('>>> Server Timeout');
           print(' >>> The request timeout while performing transaction at backend');
         },
         onScanCardTimeOut: (){
-          print("Card Scan Timeout");
           print('>>> Scan Card Timeout');
           print(' >>> The scan card timeout, no any card tap on device');
         },
         onCancelByUser: (){
-          print("Cancel By User");
           print('>>> Canceled By User');
           print(' >>> User have cancel the scanning/payment process on its own choice');
         },
         onError: (Exception error){
-          print(error.toString());
           print('>>> Exception');
           print(' >>> "Scanning/Payment process through an exception, Check the logs');
           print('  >>> ${error.toString()}');
