@@ -1,21 +1,12 @@
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        mavenLocal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        maven {
-            url "https://jitpack.io"
-            credentials { username "jp_i9ed2av1lj1kjnqpgobpeh0e7k" }
-        }
-    }
-}
-
-rootProject.name = "EdfaPaySdkSample"
 include ':app'
+
+
+def localPropertiesFile = new File(rootProject.projectDir, "local.properties")
+def properties = new Properties()
+
+assert localPropertiesFile.exists()
+localPropertiesFile.withReader("UTF-8") { reader -> properties.load(reader) }
+
+def flutterSdkPath = properties.getProperty("flutter.sdk")
+assert flutterSdkPath != null, "flutter.sdk not set in local.properties"
+apply from: "$flutterSdkPath/packages/flutter_tools/gradle/app_plugin_loader.gradle"
