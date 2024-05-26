@@ -143,7 +143,7 @@ EdfaPayPlugin.pay(
 
 
 
-## [Example](https://pub.dev/packages/flutter_edfapay_softpos_sdk/example)
+## [Example](https://github.com/edfapay/edfapay-softpos-sdk-examples/tree/main/flutter)
 <details>
   <summary> Click to Expand/Collapes </summary>
 
