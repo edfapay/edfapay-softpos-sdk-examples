@@ -13,7 +13,7 @@
 >     repositories {
 >         mavenCentral()
 >
->         // Add below to your project setting.gradle
+>       // Add below maven block at same
 >         maven {
 >             url "https://jitpack.io"
 >             credentials { username "jp_i9ed2av1lj1kjnqpgobpeh0e7k" }
@@ -33,7 +33,7 @@
 >   repositories {
 >       mavenCentral()
 >
->       // Add below to your project setting.gradle
+>       // Add below maven block at same
 >       maven {
 >           url "https://jitpack.io"
 >           credentials { username "jp_i9ed2av1lj1kjnqpgobpeh0e7k" }
