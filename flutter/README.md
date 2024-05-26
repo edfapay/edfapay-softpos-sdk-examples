@@ -16,8 +16,7 @@
 
 > [!IMPORTANT]
 > ### Configure Partner Code
-> The partner code will be provided by EdfaPay
-> Developer should set permanent `EDFAPAY_PARTNER` variable to system/user level environment variables.
+> The partner code will be provided by EdfaPay, Developer should set permanent `EDFAPAY_PARTNER` variable to system/user level environment variables in operation system.
 >
 > **Setting Environment Variable**
 > <details>
