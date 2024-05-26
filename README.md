@@ -7,5 +7,5 @@ Select platform below and follow the steps to start integration.
 
 > ### [Flutter (Android)](https://github.com/edfapay/edfapay-softpos-sdk-examples/tree/flutter)
 
-> ### [React Native (Android)](https://github.com/edfapay/edfapay-softpos-sdk-examples/tree/react_native)
+> ### [React Native (Android)](https://github.com/edfapay/edfapay-softpos-sdk-examples/tree/react-native)
 
