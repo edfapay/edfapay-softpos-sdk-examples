@@ -1,89 +1,123 @@
 # EdfaPay SoftPos SDK
+
 ## Installation
 
-### 1: Configuration (Important)
-**Its is important to add the jipack support and authorization to your project, It's allows the gradle to download the dependency from jitpack.**
-
-If your project build was configured to prefer settings repositories, Place the below maven block to project `settings.gradle`
-```groovy
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        mavenCentral()
-
-        // Add below to your project setting.gradle
-        maven {
-            url "https://jitpack.io"
-            credentials { username "jp_i9ed2av1lj1kjnqpgobpeh0e7k" }
-        }
-    }
-}
-```
-
-***
-
-If your project build was configured to prefer traditional build.gradle repositories, Place the below maven block to project `build.gradle`
-```groovy
-buildscript {
-  dependencies {
-    classpath("com.edfapay.softpos:plugin:0.0.7")
-  }
-  repositories {
-      mavenCentral()
-
-      // Add below to your project setting.gradle
-      maven {
-          url "https://jitpack.io"
-          credentials { username "jp_i9ed2av1lj1kjnqpgobpeh0e7k" }
-      }
-  }
-}
-```
-
-### 2: Adding Edfapay plugin  (Important)
-It is important to apply edfapay plugin to your app module build.gradle
-
-**Using [plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block):**
-```groovy
-plugins {
-  id("com.edfapay.softpos.tools") version "0.0.7"
-}
-```
-
-***
-
-**Using [legacy plugin application](https://docs.gradle.org/current/userguide/plugins.html#sec:old_plugin_application):**
-
-Add the classpath to the project `build.gradle`
-```groovy
-buildscript {
-  dependencies {
-    classpath("com.edfapay.softpos:plugin:0.0.7") // add this line
-  }
-}
-
-apply(plugin = "com.edfapay.softpos.tools")
-```
-[Learn how to apply plugins to subprojects](https://docs.gradle.org/current/userguide/plugins.html#sec:subprojects_plugins_dsl)
+> [!IMPORTANT]
+> ### Configure Repository 
+> **Its is important to add the jipack support and authorization to your project, It's allows the gradle to download the dependency from jitpack.**
+>
+> If your project build was configured to prefer settings repositories, Place the below maven block to project `settings.gradle`
+> ```groovy
+> dependencyResolutionManagement {
+>     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+>     repositories {
+>         mavenCentral()
+>
+>         // Add below to your project setting.gradle
+>         maven {
+>             url "https://jitpack.io"
+>             credentials { username "jp_i9ed2av1lj1kjnqpgobpeh0e7k" }
+>         }
+>     }
+> }
+> ```
+>
+> ***
+>
+> If your project build was configured to prefer traditional build.gradle repositories, Place the below maven block to project `build.gradle`
+> ```groovy
+> buildscript {
+>   dependencies {
+>     classpath("com.edfapay.softpos:plugin:0.0.7")
+>   }
+>   repositories {
+>       mavenCentral()
+>
+>       // Add below to your project setting.gradle
+>       maven {
+>           url "https://jitpack.io"
+>           credentials { username "jp_i9ed2av1lj1kjnqpgobpeh0e7k" }
+>       }
+>   }
+> }
+> ```
 
 
+> [!IMPORTANT]
+> ### Adding Edfapay plugin
+> It is important to apply edfapay plugin to your app module build.gradle
+>
+> **Using [plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block):**
+> ```groovy
+> plugins {
+>   id("com.edfapay.softpos.tools") version "0.0.7"
+> }
+> ```
+>
+> ***
+>
+> **Using [legacy plugin application](https://docs.gradle.org/current/userguide/plugins.html#sec:old_plugin_application):**
+>
+> Add the classpath to the project `build.gradle`
+> ```groovy
+> buildscript {
+>   dependencies {
+>     classpath("com.edfapay.softpos:plugin:0.0.7") // add this line
+>   }
+> }
+>
+> apply(plugin = "com.edfapay.softpos.tools")
+> ```
+> [Learn how to apply plugins to subprojects](https://docs.gradle.org/current/userguide/plugins.html#sec:subprojects_plugins_dsl)
 
-### 2: Adding dependency (Important)
-It is important to add dependency to your project module `build.gradle`
-```groovy
-dependencies {
-    .
-    .
-    .
-    . //add below script
-    edfapay{
-        softpos{
-            install("You Partner Code Here Received from EdfaPay")
-        }
-    }
-}
 
-```
+> [!IMPORTANT]
+> ### Adding dependency
+> **It is important to add dependency to your project module `build.gradle`**
+> - Provide your `partner code` to the script below at install method like: `install("xyz...")`
+> - If you provide the `null` in install method like: `install(null)`, The plugin will look for the value from environment variable `EDFAPAY_PARTNER` and apply it to the script.
+> ```groovy
+> dependencies {
+>     .
+>     .
+>     .
+>     . //add below script
+>     edfapay{
+>         softpos{
+>             install("You Partner Code Here Received from EdfaPay")
+>         }
+>     }
+> }
+>
+> ```
+> **Setting Environment Variable**
+>
+> The partner code will be provided by EdfaPay, Developer should set permanent `EDFAPAY_PARTNER` variable to system/user level environment variables in operation system.
+> 
+> <details>
+> <summary> MacOS/Linux </summary>
+>
+> Permanent environment variables should be added to the .bash_profile file:
+> 1. Open the .bash_profile file with a text editor of your choice. (create file if not exist)
+> 2. Scroll down to the end of the .bash_profile file.
+> 3. Copy below text and paste to a new line. (replace `your partner code` with actual value received from `EdfaPay`)
+>     - export EDFAPAY_PARTNER=your partner code
+> 4. Save changes you made to the .bash_profile file.
+> 5. Execute the new .bash_profile by either restarting the machine or running command below:
+>       - source ~/.bash-profile
+> </details>
+> <details>
+> <summary> Windows </summary>
+>
+> 1. Open the link below:
+>     - https://phoenixnap.com/kb/windows-set-environment-variable#ftoc-heading-4
+> 2. Make sure below:
+>     - Variable name should be `EDFAPAY_PARTNER`
+>     - Variable value should be `your partner code` received from `EdfaPay`
+> </details>
+
+
+
 
 
 ## Usage [(Example)](#example)
