@@ -120,10 +120,10 @@
 
 
 
-## Usage [(Example)](#example)
+## Usage
 
 
-#### 1: Import (Important)
+### 1: Import
 
 ```dart
 import com.edfapay.paymentcard.EdfaPayPlugin
@@ -134,7 +134,7 @@ import com.edfapay.paymentcard.model.TxnParams
 
 
 
-#### 2: Initialization (Important)
+### 2: Initialization
 ```dart
 EdfaPayPlugin.initiate(
     context = this,
@@ -150,7 +150,7 @@ EdfaPayPlugin.initiate(
 
 
 
-#### 3: Setting Theme (Optional)
+### 3: Setting Theme (Optional)
 ```dart
 EdfaPayPlugin.theme
     .setButtonBackgroundColor("#06E59F")
@@ -160,7 +160,7 @@ EdfaPayPlugin.theme
 ```
 
 
-#### 4: Pay
+### 4: Pay
 ```kotlin
 val params = TxnParams(
     amount = amount,
