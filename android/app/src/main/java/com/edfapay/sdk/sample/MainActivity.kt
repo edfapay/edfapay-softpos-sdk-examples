@@ -36,59 +36,59 @@ class MainActivity : AppCompatActivity() {
 
     fun initEdfaPay(){
 
-        EdfaPayPlugin.initiate(
-            context = this,
-            environment = Env.DEVELOPMENT,
-            authCode = "YUBmbG91Y2kuY29tOjEyMzRAV2VwYXk=", // we-settle
-            onSuccess = { plugin ->
-            }
-        ){ err ->
-            err.printStackTrace()
-        }
+EdfaPayPlugin.initiate(
+    context = this,
+    environment = Env.DEVELOPMENT,
+    authCode = "YUBmbG91Y2kuY29tOjEyMzRAV2VwYXk=", // we-settle
+    onSuccess = { plugin ->
+    }
+){ err ->
+    err.printStackTrace()
+}
 
-        EdfaPayPlugin.theme
-            .setButtonBackgroundColor("#06E59F")
-            .setButtonTextColor("#000000")
-            .setHeaderImage(this, R.drawable.edfapay_text_logo)
-            .setPoweredByImage(this, R.drawable.edfapay_text_logo)
+EdfaPayPlugin.theme
+    .setButtonBackgroundColor("#06E59F")
+    .setButtonTextColor("#000000")
+    .setHeaderImage(this, R.drawable.edfapay_text_logo)
+    .setPoweredByImage(this, R.drawable.edfapay_text_logo)
     }
 
     fun pay(plugin:EdfaPayPlugin){
-        val params = TxnParams(
-            amount = amount,
-            transactionType = TransactionType.PURCHASE,
-        )
+val params = TxnParams(
+    amount = amount,
+    transactionType = TransactionType.PURCHASE,
+)
 
-        plugin.pay(
-            this,
-            params,
-            onRequestTimerEnd = {
-                Toast.makeText(this, "Server Request Timeout", Toast.LENGTH_SHORT).show()
-            },
+plugin.pay(
+    this,
+    params,
+    onRequestTimerEnd = {
+        Toast.makeText(this, "Server Request Timeout", Toast.LENGTH_SHORT).show()
+    },
 
-            onCardScanTimerEnd = {
-                Toast.makeText(this, "Card Scan Timeout", Toast.LENGTH_SHORT).show()
-            },
+    onCardScanTimerEnd = {
+        Toast.makeText(this, "Card Scan Timeout", Toast.LENGTH_SHORT).show()
+    },
 
-            onPaymentProcessComplete = { status, code, transaction ->
-                when (status) {
-                    true -> {
-                        Toast.makeText(this, "Success: Payment Process Complete", Toast.LENGTH_SHORT).show()
-                    }
-                    false -> {
-                       Toast.makeText(this, "Failure: Payment Process Complete", Toast.LENGTH_SHORT).show()
-                    }
-                }
+    onPaymentProcessComplete = { status, code, transaction ->
+        when (status) {
+            true -> {
+                Toast.makeText(this, "Success: Payment Process Complete", Toast.LENGTH_SHORT).show()
+            }
+            false -> {
+               Toast.makeText(this, "Failure: Payment Process Complete", Toast.LENGTH_SHORT).show()
+            }
+        }
 
-            },
+    },
 
-            onCancelByUser = {
-                Toast.makeText(this, "Cancel: Cancel By User", Toast.LENGTH_SHORT).show()
-            },
+    onCancelByUser = {
+        Toast.makeText(this, "Cancel: Cancel By User", Toast.LENGTH_SHORT).show()
+    },
 
-            onError = { e ->
-                Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-            },
-        )
+    onError = { e ->
+        Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+    },
+)
     }
 }
