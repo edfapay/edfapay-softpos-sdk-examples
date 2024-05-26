@@ -1,4 +1,4 @@
-# EdfaPay SoftPos SDK
+# Flutter EdfaPay SoftPos SDK
 ## Installation
 > [!IMPORTANT]
 > ### Configure Repository
