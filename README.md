@@ -1,27 +1,59 @@
-
+.
 # react-native-edfapay-softpos-sdk
 ## Installation
-
-#### 1: Confiiguration (Important)
-Its is important to add the jipack support and authorization to your project android module, It's allows the gradle to download the native dependency from jitpack.
-<br>**Place the below code snippit to `./android/app/build.gradle` path**
-```gradle
-repositories.maven{
-  url "https://jitpack.io"
-  credentials{
-      username "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
-  } 
-}
-```
-#### 2: Install react-native SDK (Important)
-```js
-npm install react-native-edfapay-softpos-sdk
-```
-
-## Usage [(Example)](#example)
+> [!IMPORTANT]
+> ### Configure Repository
+> Its is important to add the jipack support and authorization to your project android module, It's allows the gradle to download the native dependency from jitpack.
+> <br>**Place the below code snippit to `./android/app/build.gradle` file**
+> ```gradle
+> repositories.maven{
+>   url "https://jitpack.io"
+>   credentials{
+>       username "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
+>   } 
+> }
+> ```
 
 
-#### 1: Import (Important)
+> [!IMPORTANT]
+> ### Configure Partner Code
+> The partner code will be provided by EdfaPay, Developer should set permanent `EDFAPAY_PARTNER` variable to system/user level environment variables in operation system.
+>
+> **Setting Environment Variable**
+> <details>
+> <summary> MacOS/Linux </summary>
+>
+> Permanent environment variables should be added to the .bash_profile file:
+> 1. Open the .bash_profile file with a text editor of your choice. (create file if not exist)
+> 2. Scroll down to the end of the .bash_profile file.
+> 3. Copy below text and paste to a new line. (replace `your partner code` with actual value received from `EdfaPay`)
+>     - export EDFAPAY_PARTNER=your partner code
+> 4. Save changes you made to the .bash_profile file.
+> 5. Execute the new .bash_profile by either restarting the machine or running command below:
+>       - source ~/.bash-profile
+> </details>
+> <details>
+> <summary> Windows </summary>
+>
+> 1. Open the link below:
+>     - https://phoenixnap.com/kb/windows-set-environment-variable#ftoc-heading-4
+> 2. Make sure below:
+>     - Variable name should be `EDFAPAY_PARTNER`
+>     - Variable value should be `your partner code` received from `EdfaPay`
+> </details>
+
+
+> [!IMPORTANT]
+> ### Install react-native SDK
+> Run the below command in the project directory
+> ```js
+> npm install react-native-edfapay-softpos-sdk
+> ```
+
+## Usage
+
+
+### Import
 
 ```js
 import { Transaction } from 'react-native-edfapay-softpos-sdk';
@@ -30,7 +62,7 @@ import * as EdfaPayPlugin from 'react-native-edfapay-softpos-sdk';
 
 
 
-#### 2: Initialization (Important)
+### Initialization
 ```js
 const authCode="You Sdk Login Auth Code"
 
@@ -46,7 +78,7 @@ EdfaPayPlugin.initiate(authCode).then(async (value) => {
 
 
 
-#### 3: Setting Theme (Optional)
+### Setting Theme (Optional)
 ```js
 const logo = "base64 of image" 
 EdfaPayPlugin.theme
@@ -57,7 +89,7 @@ EdfaPayPlugin.theme
 ```
 
 
-#### 4: Pay
+### Pay
 ```js
 var params = new EdfaPayPlugin.TxnParams("10.00", EdfaPayPlugin.TxnType.PURCHASE)
 
