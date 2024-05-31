@@ -2,7 +2,7 @@
 ## Installation
 > [!IMPORTANT]
 > ### Configure Repository
-> Its is important to add the gradlePluginPortal repository and jipack maven repository and its authorization to your project level build.gradle, It's allows the gradle to download edfapay plugin from gradlePluginPortal the native dependency from jitpack.
+> Its is important to add the `gradlePluginPortal` and `maven jipack with authorization` repositories to your project level build.gradle, It's allows the gradle to download edfapay plugin from gradlePluginPortal the native dependency from jitpack.
 > <br>**Place the below code snippit to `./android/build.gradle` file**
 > ```gradle
 > allprojects {
