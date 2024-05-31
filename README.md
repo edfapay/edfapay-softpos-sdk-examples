@@ -88,12 +88,20 @@
 >     .
 >     .
 >     .
->     . //add below script
+>     //add below at same
 >     edfapay{
 >         softpos{
 >             install("You Partner Code Here Received from EdfaPay")
 >         }
 >     }
+> }
+> 
+> 
+> // Also add below at same
+> configurations.configureEach {
+>     exclude group: "com.github.edfapay.emv", module: "mastercard-debug"
+>     exclude group: "com.github.edfapay.emv", module: "discovery-corec-release"
+>     exclude group: "com.github.edfapay.emv", module: "discovery-readerc-release"
 > }
 >
 > ```
