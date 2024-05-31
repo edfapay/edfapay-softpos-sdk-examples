@@ -3,14 +3,18 @@
 ## Installation
 > [!IMPORTANT]
 > ### Configure Repository
-> Its is important to add the jipack support and authorization to your project android module, It's allows the gradle to download the native dependency from jitpack.
-> <br>**Place the below code snippit to `./android/app/build.gradle` file**
+> Its is important to add the jipack support and authorization to your project level build.gradle, It's allows the gradle to download the native dependency from jitpack.
+> <br>**Place the below code snippit to `./android/build.gradle` file**
 > ```gradle
-> repositories.maven{
->   url "https://jitpack.io"
->   credentials{
->       username "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
->   } 
+> allprojects {
+>   repositories {
+>     maven{
+>       url "https://jitpack.io"
+>       credentials{
+>         username "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
+>       }
+>     }
+>   }
 > }
 > ```
 
@@ -66,7 +70,7 @@ import * as EdfaPayPlugin from 'react-native-edfapay-softpos-sdk';
 ```js
 const authCode="You Sdk Login Auth Code"
 
-EdfaPayPlugin.initiate(authCode).then(async (value) => {
+EdfaPayPlugin.initiate(authCode, EdfaPayPlugin.Env.UAT).then(async (value) => {
   if(value == false){
     // Handle initialization failed
     // inform the developer or user initializing failed
