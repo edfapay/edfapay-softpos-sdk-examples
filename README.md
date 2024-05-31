@@ -1,13 +1,15 @@
 # React-Native EdfaPay SoftPos SDK
 
+
 ## Installation
 > [!IMPORTANT]
 > ### Configure Repository
-> Its is important to add the jipack support and authorization to your project level build.gradle, It's allows the gradle to download the native dependency from jitpack.
+> Its is important to add the `gradlePluginPortal` and `maven jipack with authorization` repositories to your project level build.gradle, It's allows the gradle to download edfapay plugin from gradlePluginPortal the native dependency from jitpack.
 > <br>**Place the below code snippit to `./android/build.gradle` file**
 > ```gradle
 > allprojects {
 >   repositories {
+>     gradlePluginPortal()
 >     maven{
 >       url "https://jitpack.io"
 >       credentials{
@@ -17,6 +19,34 @@
 >   }
 > }
 > ```
+
+
+> [!IMPORTANT]
+> ### Adding Edfapay plugin
+> It is important to apply edfapay plugin to your app module `./android/app/build.gradle`
+>
+> **Using [plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block):**
+> ```groovy
+> plugins {
+>   id("com.edfapay.softpos.tools") version "0.0.7"
+> }
+> ```
+>
+> ***
+>
+> **Using [legacy plugin application](https://docs.gradle.org/current/userguide/plugins.html#sec:old_plugin_application):**
+>
+> Add the classpath to the project `./android/build.gradle`
+> ```groovy
+> buildscript {
+>   dependencies {
+>     classpath("com.edfapay.softpos:plugin:0.0.7") // add this line
+>   }
+> }
+>
+> apply(plugin = "com.edfapay.softpos.tools")
+> ```
+> [Learn how to apply plugins to subprojects](https://docs.gradle.org/current/userguide/plugins.html#sec:subprojects_plugins_dsl)
 
 
 > [!IMPORTANT]
