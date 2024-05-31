@@ -7,6 +7,7 @@
 > ```gradle
 > allprojects {
 >   repositories {
+>     gradlePluginPortal()
 >     maven{
 >       url "https://jitpack.io"
 >       credentials{
@@ -16,6 +17,34 @@
 >   }
 > }
 > ```
+
+
+> [!IMPORTANT]
+> ### Adding Edfapay plugin
+> It is important to apply edfapay plugin to your app module build.gradle
+>
+> **Using [plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block):**
+> ```groovy
+> plugins {
+>   id("com.edfapay.softpos.tools") version "0.0.7"
+> }
+> ```
+>
+> ***
+>
+> **Using [legacy plugin application](https://docs.gradle.org/current/userguide/plugins.html#sec:old_plugin_application):**
+>
+> Add the classpath to the project `build.gradle`
+> ```groovy
+> buildscript {
+>   dependencies {
+>     classpath("com.edfapay.softpos:plugin:0.0.7") // add this line
+>   }
+> }
+>
+> apply(plugin = "com.edfapay.softpos.tools")
+> ```
+> [Learn how to apply plugins to subprojects](https://docs.gradle.org/current/userguide/plugins.html#sec:subprojects_plugins_dsl)
 
 
 > [!IMPORTANT]
