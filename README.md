@@ -1,4 +1,5 @@
 # Flutter EdfaPay SoftPos SDK
+
 ## Installation
 > [!IMPORTANT]
 > ### Configure Repository
@@ -21,7 +22,7 @@
 
 > [!IMPORTANT]
 > ### Adding Edfapay plugin
-> It is important to apply edfapay plugin to your app module build.gradle
+> It is important to apply edfapay plugin to your app module `./android/app/build.gradle`
 >
 > **Using [plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block):**
 > ```groovy
@@ -34,7 +35,7 @@
 >
 > **Using [legacy plugin application](https://docs.gradle.org/current/userguide/plugins.html#sec:old_plugin_application):**
 >
-> Add the classpath to the project `build.gradle`
+> Add the classpath to the project `./android/build.gradle`
 > ```groovy
 > buildscript {
 >   dependencies {
