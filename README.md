@@ -4,16 +4,24 @@
 
 > [!IMPORTANT]
 > ### Configure Repository 
-> **Its is important to add the jipack support and authorization to your project, It's allows the gradle to download the dependency from jitpack.**
+> Its is important to add the `gradlePluginPortal` and `maven jipack with authorization` repositories to your project, It's allows the gradle to download edfapay plugin from **gradlePluginPortal** the native dependency from **jitpack**.
 >
-> If your project build was configured to prefer settings repositories, Place the below maven block to project `settings.gradle`
+> If your project build was configured to prefer settings repositories, Place the below maven block to project **`./settings.gradle`**
 > ```groovy
+> pluginManagement {
+>     repositories {
+>         
+>         // Add below at same
+>         gradlePluginPortal()
+>     }
+> }
+>
 > dependencyResolutionManagement {
 >     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 >     repositories {
 >         mavenCentral()
 >
->       // Add below maven block at same
+>         // Add below at same
 >         maven {
 >             url "https://jitpack.io"
 >             credentials { username "jp_i9ed2av1lj1kjnqpgobpeh0e7k" }
@@ -24,20 +32,19 @@
 >
 > ***
 >
-> If your project build was configured to prefer traditional build.gradle repositories, Place the below maven block to project `build.gradle`
+> If your project build was configured to prefer traditional **build.gradle** repositories, Place the below maven block to project **`./build.gradle`**
 > ```groovy
-> buildscript {
->   dependencies {
->     classpath("com.edfapay.softpos:plugin:0.0.7")
->   }
+> allprojects {
 >   repositories {
->       mavenCentral()
 >
->       // Add below maven block at same
->       maven {
->           url "https://jitpack.io"
->           credentials { username "jp_i9ed2av1lj1kjnqpgobpeh0e7k" }
+>     // Add below at same
+>     gradlePluginPortal()
+>     maven{
+>       url "https://jitpack.io"
+>       credentials{
+>         username "jp_i9ed2av1lj1kjnqpgobpeh0e7k"
 >       }
+>     }
 >   }
 > }
 > ```
