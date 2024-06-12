@@ -9,7 +9,6 @@
 > ```gradle
 > allprojects {
 >   repositories {
->     gradlePluginPortal()
 >     maven{
 >       url "https://jitpack.io"
 >       credentials{
@@ -39,6 +38,11 @@
 > Add the classpath to the project `./android/build.gradle`
 > ```groovy
 > buildscript {
+>    repositories {
+>     maven {
+>       url = uri("https://plugins.gradle.org/m2/")
+>     }
+>   }
 >   dependencies {
 >     classpath("com.edfapay.softpos:plugin:0.0.7") // add this line
 >   }
