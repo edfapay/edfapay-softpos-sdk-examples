@@ -9,7 +9,6 @@
 > ```gradle
 > allprojects {
 >   repositories {
->     gradlePluginPortal()
 >     maven{
 >       url "https://jitpack.io"
 >       credentials{
@@ -39,6 +38,11 @@
 > Add the classpath to the project `./android/build.gradle`
 > ```groovy
 > buildscript {
+>    repositories {
+>     maven {
+>       url = uri("https://plugins.gradle.org/m2/")
+>     }
+>   }
 >   dependencies {
 >     classpath("com.edfapay.softpos:plugin:0.0.7") // add this line
 >   }
@@ -53,7 +57,19 @@
 > ### Configure Partner Code
 > The partner code will be provided by EdfaPay, Developer should set permanent `EDFAPAY_PARTNER` variable to system/user level environment variables in operation system.
 >
-> **Setting Environment Variable**
+> _Developer can setup partner code by two ways_
+> 1. _Gradle Properties_
+> 2. _Environment Variable_
+>
+> **Setup by Gradle Properties**
+>
+> At file `~/.gradle/gradle.properties` you need to add property named `EDFAPAY_PARTNER`
+> ```
+> EDFAPAY_PARTNER=Your_Partner_Code
+> ```
+> 
+> 
+> **Setup by Environment Variable**
 > <details>
 > <summary> MacOS/Linux </summary>
 >
