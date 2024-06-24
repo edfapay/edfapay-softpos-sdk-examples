@@ -4,13 +4,13 @@ import { View, Text, Image, Button, StyleSheet, Dimensions, Alert } from 'react-
 import { dialog } from './Dialog';
 import { Strings } from './Strings';
 import { styles } from './Styles';
+import { authCode } from './AuthCode';
 import * as Icons from './IconsBase64';
 
 import { Transaction } from 'react-native-edfapay-softpos-sdk';
 import * as EdfaPayPlugin from 'react-native-edfapay-softpos-sdk';
 
 const logo = require('../assets/images/edfapay_text_logo.png');
-const authCode="Login Auth Code Here"
 const amountToPay = "10.00";
 
 export default function App() {

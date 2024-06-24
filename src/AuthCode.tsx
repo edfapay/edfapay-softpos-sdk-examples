@@ -1,0 +1,1 @@
+export const authCode="YW1lZXIuaGFtemFAcGF5c3lzcGFicy5jb206MTIzNDU2Nzg="
