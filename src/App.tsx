@@ -10,8 +10,8 @@ import { Transaction } from 'react-native-edfapay-softpos-sdk';
 import * as EdfaPayPlugin from 'react-native-edfapay-softpos-sdk';
 
 const logo = require('../assets/images/edfapay_text_logo.png');
-const authCode="YUBmbG91Y2kuY29tOjEyMzRAV2VwYXk="
-const amountToPay = "01.010";
+const authCode="Login Auth Code Here"
+const amountToPay = "10.00";
 
 export default function App() {
   const [initResult, setInitResult] = React.useState<boolean>();
@@ -40,28 +40,26 @@ export default function App() {
         }} />
       </View>
     </View>
-  );
+  ); 
 };
 
 
 
 function initiateSdk(completion: ((status:boolean) => void)){
 
-  EdfaPayPlugin.initiate(authCode).then(async (value:boolean) => {
+  EdfaPayPlugin.initiate(authCode, EdfaPayPlugin.Env.STAGING).then(async (value:boolean) => {
     completion(value);
     if(value == false){
       dialog.alert("Error Initializing","Failed to initialize 'EdfaPay SDK'")
       return
     }
+
+    EdfaPayPlugin.theme
+    .setButtonBackgroundColor("#06E59F")
+    .setButtonTextColor("#000000")
+    .setPoweredByImage(Icons.logo)
+    .setHeaderImage(Icons.logo)
   });
-
-
-
-  EdfaPayPlugin.theme
-      .setButtonBackgroundColor("#06E59F")
-      .setButtonTextColor("#000000")
-      .setPoweredByImage(Icons.logo)
-      .setHeaderImage(Icons.logo)
 
 }
 
