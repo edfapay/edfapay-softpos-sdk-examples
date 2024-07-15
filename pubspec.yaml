@@ -19,7 +19,8 @@ dependencies:
   fluttertoast: ^8.2.2
   hexcolor: ^3.0.1
 
-  flutter_edfapay_softpos_sdk: ^1.0.1+2
+#  flutter_edfapay_softpos_sdk: ^1.0.1+2
+  flutter_edfapay_softpos_sdk: ^2.0.0+7
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

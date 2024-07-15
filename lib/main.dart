@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_edfapay_softpos_sdk/edfapay_softpos_sdk.dart';
 import 'package:flutter_edfapay_softpos_sdk/enums/transaction_type.dart';
 import 'package:flutter_edfapay_softpos_sdk/flutter_edfapay_softpos_sdk.dart';
 import 'package:flutter_edfapay_softpos_sdk/helpers.dart';
@@ -102,7 +103,7 @@ class _MyAppState extends State<MyApp> {
 
 
   initiate() async{
-    EdfaPayPlugin.initiate(authCode).then((value){
+    EdfaPayPlugin.initiate(authCode: authCode, environment: Env.DEVELOPMENT).then((value){
       setState(() {
         _edfaPluginInitiated = value;
       });

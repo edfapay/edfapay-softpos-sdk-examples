@@ -66,10 +66,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_edfapay_softpos_sdk
-      sha256: "2c985526e1613014387d5d3abf05bfdd76c9eef0fcc8c4b036f0cf225c2d62cf"
+      sha256: "5a056d6f7464139cc0f2e0b665c3fbb17d5f6b4cc36d55b4f5812cb64d648935"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.1+2"
+    version: "2.0.0+7"
   flutter_lints:
     dependency: "direct dev"
     description:
