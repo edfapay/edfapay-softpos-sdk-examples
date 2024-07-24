@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
 
         initEdfaPay()
 
+        with(findViewById<Button>(R.id.btnTestApis)) {
+
+        }
         findViewById<Button>(R.id.btnTestApis).setOnClickListener {
             startActivity(Intent(this, TestApisActivity::class.java))
         }
