@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         showInitializeSdk()
 
+        findViewById<TextView>(R.id.txtVersion).text = EdfaPayPlugin.SDK_VERSION
         findViewById<TextView>(R.id.txtAuthCode).text = cache.getString("auth", "");
 
         findViewById<View>(R.id.btnInitialize).setOnClickListener {
