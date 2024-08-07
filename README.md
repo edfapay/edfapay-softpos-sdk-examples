@@ -1,5 +1,5 @@
 # React-Native EdfaPay SoftPos SDK
-
+[![npm version](https://img.shields.io/npm/v/react-native-edfapay-softpos-sdk)](https://www.npmjs.com/package/react-native-edfapay-softpos-sdk)
 
 ## Installation
 > [!IMPORTANT]
@@ -94,11 +94,17 @@
 
 
 > [!IMPORTANT]
-> ### Install react-native SDK
-> Run the below command in the project directory
+> ### Install or Update react-native SDK
+> To install run the below command in the project directory
 > ```js
 > npm install react-native-edfapay-softpos-sdk
 > ```
+> To update run the below command in the project directory
+> ```js
+> npm update react-native-edfapay-softpos-sdk
+> ```
+> _**Make sure the latest version is installed by comparing the version in package.json.**_  [![npm version](https://img.shields.io/npm/v/react-native-edfapay-softpos-sdk)](https://www.npmjs.com/package/react-native-edfapay-softpos-sdk)
+ 
 
 ## Usage
 
