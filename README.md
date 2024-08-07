@@ -27,7 +27,7 @@
 > **Using [plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block):**
 > ```groovy
 > plugins {
->   id("com.edfapay.softpos.tools") version "0.0.7"
+>   id("com.edfapay.softpos.tools") version "0.0.8"
 > }
 > ```
 >
