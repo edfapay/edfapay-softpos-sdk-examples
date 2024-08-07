@@ -1,10 +1,13 @@
 package com.edfapay.sdk.sample
 
-import android.R.attr.name
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.SpinnerAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +24,7 @@ import com.journeyapps.barcodescanner.ScanOptions.QR_CODE
 
 class MainActivity : AppCompatActivity() {
     lateinit var cache:SharedPreferences
+    var envIndex:Int = 0
 
     // Register the launcher and result handler
     private val barcodeLauncher = registerForActivityResult<ScanOptions, ScanIntentResult>(
@@ -53,12 +57,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initView(){
-
         showInitializeSdk()
 
+        with(findViewById<Spinner>(R.id.envSpinner)) {
+            val items = Env.values().map { it.name }.toMutableList()
+            items.add(0, "Select Environment")
+            adapter = ArrayAdapter<String>(applicationContext, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, items)
+            onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                    envIndex = position
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
+            }
+        }
+
+        findViewById<TextView>(R.id.txtPartner).text = EdfaPayPlugin.PARTNER
         findViewById<TextView>(R.id.txtVersion).text = EdfaPayPlugin.SDK_VERSION
         findViewById<TextView>(R.id.txtAuthCode).text = cache.getString("auth", "");
-
         findViewById<View>(R.id.btnInitialize).setOnClickListener {
             initEdfaPay()
         }
@@ -88,11 +104,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initEdfaPay(){
-
         val authCode = findViewById<TextView>(R.id.txtAuthCode).text.toString()
         if(authCode.isEmpty()){
             Toast.makeText(this, "Invalid Auth Code", Toast.LENGTH_SHORT).show()
             return
+        }else if(envIndex == 0){
+            Toast.makeText(this, "Invalid Environment Selected", Toast.LENGTH_SHORT).show()
+            return
+        }else if(envIndex > 0 && Env.values().get(envIndex).url.isNullOrEmpty()) {
+
         }
 
         EdfaPayPlugin.initiate(
