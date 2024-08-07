@@ -143,7 +143,7 @@ EdfaPayPlugin.theme
 ```js
 var params = new EdfaPayPlugin.TxnParams("10.00", EdfaPayPlugin.TxnType.PURCHASE)
 
-const onPaymentProcessComplete = (status:boolean, transaction:Transaction) => {
+const onPaymentProcessComplete = (status:boolean, code:string, transaction:Transaction) => {
   console.log(`>>> Payment Process Complete`)
   if(status){
     console.log(` >>> [ Success ]`)
