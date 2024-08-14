@@ -49,8 +49,7 @@
 
             <LinearLayout
                 android:gravity="center"
-                android:backgroundTint="@color/primary_color"
-                android:background="@drawable/round_corner"
+                android:background="@drawable/round_corner_bordered_bg"
                 android:paddingHorizontal="@dimen/_15sdp"
                 android:paddingVertical="@dimen/_5sdp"
                 android:orientation="vertical"
@@ -64,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:text="EdfaPay"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_10ssp"
                     android:textStyle="bold" />
                 <View
                     android:background="@color/black"
@@ -117,7 +116,7 @@
                     android:textSize="@dimen/_12sdp"
                     android:textAlignment="center"
                     android:id="@+id/txtAuthCode"
-                    android:hint="Scan or type your auth code here"
+                    android:hint="Scan your auth code QR here"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -134,6 +133,14 @@
                 android:id="@+id/envSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <EditText
+                android:enabled="false"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12sdp"
+                android:id="@+id/txtEnvUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
             <Button
                 android:textAllCaps="false"

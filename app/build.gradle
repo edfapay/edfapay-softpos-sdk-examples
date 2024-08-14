@@ -59,7 +59,7 @@ dependencies {
     edfapay{
         softpos{
             // Replace partnerCode value with your partner code
-            def partnerCode = "706172746E65727E73612D65646661706179"
+            def partnerCode = findProperty("EDFAPAY_PARTNER")
             install(partnerCode)
         }
     }

@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.EditText
 import android.widget.Spinner
 import android.widget.SpinnerAdapter
 import android.widget.TextView
@@ -23,8 +24,19 @@ import com.journeyapps.barcodescanner.ScanOptions.QR_CODE
 
 
 class MainActivity : AppCompatActivity() {
+    private var viewPay: View? = null
+    private var viewInit: View? = null
+    private var txtAmount: TextView? = null
+    private var btnScanQr: View? = null
+    private var btnPay: View? = null
+    private var btnInitialize: View? = null
+    private var txtAuthCode: TextView? = null
+    private var txtVersion: TextView? = null
+    private var txtPartner: TextView? = null
+    private var spinnerEnv: Spinner? = null
+    private var txtEnvUrl: TextView? = null
     lateinit var cache:SharedPreferences
-    var envIndex:Int = 0
+    var env:Env? = null
 
     // Register the launcher and result handler
     private val barcodeLauncher = registerForActivityResult<ScanOptions, ScanIntentResult>(
@@ -41,6 +53,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        txtEnvUrl = findViewById(R.id.txtEnvUrl)
+        spinnerEnv = findViewById(R.id.envSpinner)
+        txtPartner = findViewById(R.id.txtPartner)
+        txtVersion = findViewById(R.id.txtVersion)
+        txtAuthCode = findViewById(R.id.txtAuthCode)
+        btnInitialize = findViewById(R.id.btnInitialize)
+        btnPay = findViewById(R.id.btnPay)
+        btnScanQr = findViewById(R.id.btnScanQr)
+        txtAmount = findViewById<TextView>(R.id.txtAmount)
+
+        viewInit = findViewById<View>(R.id.viewInit)
+        viewPay = findViewById<View>(R.id.viewPay)
 
         cache = getSharedPreferences("EdfaPaySoftPOS", MODE_PRIVATE)
         initView()
@@ -59,31 +84,35 @@ class MainActivity : AppCompatActivity() {
     fun initView(){
         showInitializeSdk()
 
-        with(findViewById<Spinner>(R.id.envSpinner)) {
+        with(spinnerEnv!!) {
             val items = Env.values().map { it.name }.toMutableList()
             items.add(0, "Select Environment")
-            adapter = ArrayAdapter<String>(applicationContext, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, items)
+            adapter = ArrayAdapter(applicationContext, android.R.layout.simple_spinner_dropdown_item, items)
             onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                    envIndex = position
+                    env = Env.values().firstOrNull { it.name ==  items[position]}
+                    with(txtEnvUrl) {
+                        this?.text = env?.url ?: "Missing Environment Url"
+                        this?.isEnabled = env?.name == "DEMO"
+                    }
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {}
             }
         }
 
-        findViewById<TextView>(R.id.txtPartner).text = EdfaPayPlugin.PARTNER
-        findViewById<TextView>(R.id.txtVersion).text = EdfaPayPlugin.SDK_VERSION
-        findViewById<TextView>(R.id.txtAuthCode).text = cache.getString("auth", "");
-        findViewById<View>(R.id.btnInitialize).setOnClickListener {
+        txtPartner?.text = EdfaPayPlugin.PARTNER
+        txtVersion?.text = EdfaPayPlugin.SDK_VERSION
+        txtAuthCode?.text = cache.getString("auth", "");
+        btnInitialize?.setOnClickListener {
             initEdfaPay()
         }
 
-        findViewById<View>(R.id.btnPay).setOnClickListener {
+        btnPay?.setOnClickListener {
             this.pay()
         }
 
-        findViewById<View>(R.id.btnScanQr).setOnClickListener {
+        btnScanQr?.setOnClickListener {
             barcodeLauncher.launch(
                 ScanOptions()
                     .setBarcodeImageEnabled(false)
@@ -94,24 +123,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showInitializeSdk(){
-        findViewById<View>(R.id.viewInit).visibility = View.VISIBLE
-        findViewById<View>(R.id.viewPay).visibility = View.GONE
+        viewInit?.visibility = View.VISIBLE
+        viewPay?.visibility = View.GONE
     }
 
     fun showPay(){
-        findViewById<View>(R.id.viewInit).visibility = View.GONE
-        findViewById<View>(R.id.viewPay).visibility = View.VISIBLE
+        viewInit?.visibility = View.GONE
+        viewPay?.visibility = View.VISIBLE
     }
 
     fun initEdfaPay(){
-        val authCode = findViewById<TextView>(R.id.txtAuthCode).text.toString()
+        val authCode = txtAuthCode?.text.toString()
         if(authCode.isEmpty()){
             Toast.makeText(this, "Invalid Auth Code", Toast.LENGTH_SHORT).show()
             return
-        }else if(envIndex == 0){
+        }else if(env == null){
             Toast.makeText(this, "Invalid Environment Selected", Toast.LENGTH_SHORT).show()
             return
-        }else if(envIndex > 0 && Env.values().get(envIndex).url.isNullOrEmpty()) {
+        }else {
 
         }
 
@@ -137,7 +166,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun pay(){
-        val amount = findViewById<TextView>(R.id.txtAmount).text
+        val amount = txtAmount?.text
         if(amount.toString().toDoubleOrNull() == null){
             Toast.makeText(this, "Invalid Amount", Toast.LENGTH_SHORT).show()
             return
