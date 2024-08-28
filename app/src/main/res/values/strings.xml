@@ -1,3 +1,6 @@
-<resources>
-    <string name="app_name">EdfaPay SDK Sample</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">EP Demo</string>
+    <string name="note">Note: This is demo app, and it will not deduct any amount from your account attached with scanned card (Its simulates the payment)</string>
+    <string name="initializing_please_wait" tools:ignore="ExtraTranslation">Initializing, Please wait...</string>
+    <string name="initialize_sdk">Initialize SDK</string>
 </resources>

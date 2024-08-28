@@ -4,18 +4,22 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.SpinnerAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.edfapay.paymentcard.EdfaPayPlugin
 import com.edfapay.paymentcard.model.TransactionType
 import com.edfapay.paymentcard.model.TxnParams
 import com.edfapay.paymentcard.model.enums.Env
+import com.edfapay.paymentcard.utils.extentions.getDeviceIdentifierAsUUID
 import com.edfapay.paymentcard.utils.isMocked
 import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanIntentResult
@@ -24,17 +28,19 @@ import com.journeyapps.barcodescanner.ScanOptions.QR_CODE
 
 
 class MainActivity : AppCompatActivity() {
+    private var contentView: View? = null
     private var viewPay: View? = null
     private var viewInit: View? = null
     private var txtAmount: TextView? = null
     private var btnScanQr: View? = null
     private var btnPay: View? = null
-    private var btnInitialize: View? = null
+    private var btnInitialize: Button? = null
     private var txtAuthCode: TextView? = null
     private var txtVersion: TextView? = null
     private var txtPartner: TextView? = null
     private var spinnerEnv: Spinner? = null
     private var txtEnvUrl: TextView? = null
+    private var txtDeviceId: TextView? = null
     lateinit var cache:SharedPreferences
     var env:Env? = null
 
@@ -54,6 +60,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        contentView = getWindow().getDecorView().findViewById(android.R.id.content)
+
+        txtDeviceId = findViewById(R.id.txtDeviceId)
         txtEnvUrl = findViewById(R.id.txtEnvUrl)
         spinnerEnv = findViewById(R.id.envSpinner)
         txtPartner = findViewById(R.id.txtPartner)
@@ -82,6 +91,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initView(){
+        txtDeviceId?.text = "UDID: ".plus(getDeviceIdentifierAsUUID())
+
         showInitializeSdk()
 
         with(spinnerEnv!!) {
@@ -144,11 +155,14 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
+        initializing(true)
         EdfaPayPlugin.initiate(
             context = this,
             environment = Env.DEVELOPMENT,//.with("https://testdeployment.edfapay.com/"),
             authCode = authCode, // we-settle
             onSuccess = { plugin ->
+                initializing(false)
                 showPay()
 
                 EdfaPayPlugin.theme
@@ -160,6 +174,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "SDK Initialized Successfully", Toast.LENGTH_SHORT).show()
             }
         ){ err ->
+
+            initializing(false)
             err.printStackTrace()
             Toast.makeText(this, "Error Initializing: ${err.message}", Toast.LENGTH_SHORT).show()
         }
@@ -210,5 +226,16 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    // Launc
+    fun initializing(yes:Boolean){
+        when (yes) {
+            true -> {
+                btnInitialize?.text = getString(R.string.initializing_please_wait)
+                window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            }
+            false -> {
+                btnInitialize?.text = getString(R.string.initialize_sdk)
+                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            }
+        }
+    }
 }

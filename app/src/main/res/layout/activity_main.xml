@@ -16,6 +16,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:textIsSelectable="true"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:id="@+id/txtDeviceId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
         <LinearLayout
             android:layout_weight="1"
             android:gravity="center"
@@ -83,10 +90,11 @@
 
         <ScrollView
             android:layout_weight="1"
-            android:paddingHorizontal="@dimen/_15sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="0dp">
             <TextView
+                android:textColor="@color/black"
                 android:justificationMode="inter_word"
                 android:textAlignment="center"
                 android:layout_width="match_parent"
@@ -147,7 +155,7 @@
                 android:textColor="@color/white"
                 android:backgroundTint="@color/primary_color"
                 android:id="@+id/btnInitialize"
-                android:text="Initialize SDK"
+                android:text="@string/initialize_sdk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -181,16 +189,15 @@
                 android:text="Pay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
             <TextView
-                android:id="@+id/txtMsg"
-                android:textColor="@color/black"
-                android:layout_marginBottom="@dimen/_10sdp"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/red"
                 android:justificationMode="inter_word"
                 android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_12sdp"
-                android:text="Click on button above to test the card processing with amount"/>
+                android:text="@string/note"/>
         </LinearLayout>
 
 
