@@ -59,6 +59,23 @@
 >   flutter-edfapay-softpos-sdk: any
 > ```
 
+
+### Minimum Android API
+Edfapay SoftPOS SDK supports the **minSdkVersion 29** 
+
+If your project **minSdkVersion** is less than 29, Override the library in your project `AndroidManifest.xml` by follow below:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.app.smartpos">
+    <!--  Override Min SDK Library  -->
+    <uses-sdk tools:overrideLibrary="com.edfapay.paymentcard" />
+
+...
+```
+
 ## Usage
 
 
