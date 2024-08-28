@@ -21,39 +21,6 @@
 
 
 > [!IMPORTANT]
-> ### Adding Edfapay plugin
-> It is important to apply edfapay plugin to your app module `./android/app/build.gradle`
->
-> **Using [plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block):**
-> ```groovy
-> plugins {
->   id("com.edfapay.softpos.tools") version "0.0.8"
-> }
-> ```
->
-> ***
->
-> **Using [legacy plugin application](https://docs.gradle.org/current/userguide/plugins.html#sec:old_plugin_application):**
->
-> Add the classpath to the project `./android/build.gradle`
-> ```groovy
-> buildscript {
->    repositories {
->     maven {
->       url = uri("https://plugins.gradle.org/m2/")
->     }
->   }
->   dependencies {
->     classpath("com.edfapay.softpos:plugin:0.0.7") // add this line
->   }
-> }
->
-> apply(plugin = "com.edfapay.softpos.tools")
-> ```
-> [Learn how to apply plugins to subprojects](https://docs.gradle.org/current/userguide/plugins.html#sec:subprojects_plugins_dsl)
-
-
-> [!IMPORTANT]
 > ### Configure Partner Code
 > The partner code will be provided by EdfaPay, Developer should set permanent `EDFAPAY_PARTNER` variable to system/user level environment variables in operation system.
 >
