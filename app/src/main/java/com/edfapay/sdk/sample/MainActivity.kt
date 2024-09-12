@@ -189,7 +189,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val params = TxnParams(
-            amount = amount.toString(),
+            amount = String.format("%.2f", amount), // should be in format of currency (like SAR would be 1.00)
             transactionType = TransactionType.PURCHASE,
         )
 
