@@ -51,13 +51,13 @@
 
 
 > [!IMPORTANT]
-> ### Adding Edfapay plugin
+> ### Adding Edfapay Gradle plugin ![Version](https://img.shields.io/badge/Gradle%20Plugin-v1.0.0-blue.svg)
 > It is important to apply edfapay plugin to your app module build.gradle
 >
 > **Using [plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block):**
 > ```groovy
 > plugins {
->   id("com.edfapay.softpos.tools") version "0.0.7"
+>   id("com.edfapay.softpos.tools") version "1.0.0"
 > }
 > ```
 >
@@ -69,7 +69,7 @@
 > ```groovy
 > buildscript {
 >   dependencies {
->     classpath("com.edfapay.softpos:plugin:0.0.7") // add this line
+>     classpath("com.edfapay.softpos:plugin:1.0.0") // add this line
 >   }
 > }
 >
@@ -109,7 +109,7 @@
 >
 > You must define the below properties in your project **`gradle.properties`**
 >  - **EDFAPAY_PARTNER**
->      - The partner code will be provided by EdfaPay, The Developer should set the property. example: **`EDFAPAY_PARTNER=706172746E65727Exxxxxxxxxxxxx`**
+>      - EdfaPay will provide the partner code, The Developer should set the property. example: **`EDFAPAY_PARTNER=706172746E65727Exxxxxxxxxxxxx`**
 >
 >  - **EDFAPAY_SDK_MODE**
 >      - The developer should set the property to **production**. example: **`EDFAPAY_SDK_MODE=production`**
@@ -151,18 +151,6 @@ EdfaPayPlugin.initiate(
 }
 ```
 
-
-
-### 3: Setting Theme (Optional)
-```dart
-EdfaPayPlugin.theme
-    .setButtonBackgroundColor("#06E59F")
-    .setButtonTextColor("#000000")
-    .setHeaderImage(this, R.drawable.logo)
-    .setPoweredByImage(this, R.drawable.ogo);
-```
-
-
 ### 4: Pay
 ```kotlin
 val params = TxnParams(
@@ -197,6 +185,27 @@ EdfaPayPlugin.pay(
     },
 )
 ```
+
+
+> [!TIP]
+> ### Enable or Disable Logs
+> The developer can enable or disable logging at the SDK
+> ```
+> EdfaPayPlugin.enableLogs = true
+> ```
+> ### Setting the animation speed
+> The developer can set the speed for animations for **status** and **card scheme**. It will control the process speed.
+> ```
+> EdfaPayPlugin.animationSpeedX = 2.0f
+> ```
+> ### Setting Theme
+> ```dart
+> EdfaPayPlugin.theme
+>     .setButtonBackgroundColor("#06E59F")
+>     .setButtonTextColor("#000000")
+>     .setHeaderImage(this, R.drawable.logo)
+>     .setPoweredByImage(this, R.drawable.ogo);
+> ```
 
 ## License
 
