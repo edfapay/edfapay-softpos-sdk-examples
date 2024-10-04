@@ -82,7 +82,7 @@
 > ### Adding dependency
 > **It is important to add dependency to your project module `build.gradle`**
 > - Provide your `partner code` to the script below at install method like: `install("xyz...")`
-> - If you provide the `null` in install method like: `install(null)`, The plugin will look for the value from environment variable `EDFAPAY_PARTNER` and apply it to the script.
+> - If you provide the `null` in install method like: `install(null)`, The plugin will look for the value from variable `EDFAPAY_PARTNER` at `gradle.properties` of your project and apply it to the script.
 > ```groovy
 > dependencies {
 >     .
@@ -105,33 +105,21 @@
 > }
 >
 > ```
-> **Setting Environment Variable**
+> ### Setting EdfaPay Plugin Properties
 >
-> The partner code will be provided by EdfaPay, Developer should set permanent `EDFAPAY_PARTNER` variable to system/user level environment variables in operation system.
+> You must define the below properties in your project **`gradle.properties`**
+>  - **EDFAPAY_PARTNER**
+>      - The partner code will be provided by EdfaPay, The Developer should set the property. example: **`EDFAPAY_PARTNER=706172746E65727Exxxxxxxxxxxxx`**
+>
+>  - **EDFAPAY_SDK_MODE**
+>      - The developer should set the property to **production**. example: **`EDFAPAY_SDK_MODE=production`**
+>      - If the partner requests some enhancement and a new feature in SDK, the developer will directed to change the **mode** to **development** or any value for testing.
+>      - If the developer wants to define the **mode**, then no need to specify **version to EDFAPAY_SDK_VERSION** property.
 > 
-> <details>
-> <summary> MacOS/Linux </summary>
+>  - **EDFAPAY_SDK_VERSION**
+>      - The developer should set the property with the required **version** of SDK suggested by EdfaPay. example: **`EDFAPAY_SDK_VERSION=1.0.3`**
+>      - If the developer defines the **version** then **mode** will be skipped and a specified version will downloaded as a dependency.
 >
-> Permanent environment variables should be added to the .bash_profile file:
-> 1. Open the .bash_profile file with a text editor of your choice. (create file if not exist)
-> 2. Scroll down to the end of the .bash_profile file.
-> 3. Copy below text and paste to a new line. (replace `your partner code` with actual value received from `EdfaPay`)
->     - export EDFAPAY_PARTNER=your partner code
-> 4. Save changes you made to the .bash_profile file.
-> 5. Execute the new .bash_profile by either restarting the machine or running command below:
->       - source ~/.bash-profile
-> </details>
-> <details>
-> <summary> Windows </summary>
->
-> 1. Open the link below:
->     - https://phoenixnap.com/kb/windows-set-environment-variable#ftoc-heading-4
-> 2. Make sure below:
->     - Variable name should be `EDFAPAY_PARTNER`
->     - Variable value should be `your partner code` received from `EdfaPay`
-> </details>
-
-
 
 
 
