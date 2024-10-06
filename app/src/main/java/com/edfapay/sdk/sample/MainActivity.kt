@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initView(){
-        txtDeviceId?.text = "UDID: ".plus(getDeviceIdentifierAsUUID())
+        txtDeviceId?.text = "UDID: ".plus(getDeviceIdentifierAsUUID(null))
 
         showInitializeSdk()
 
@@ -151,25 +151,23 @@ class MainActivity : AppCompatActivity() {
         }else if(env == null){
             Toast.makeText(this, "Invalid Environment Selected", Toast.LENGTH_SHORT).show()
             return
-        }else {
-
         }
 
 
         initializing(true)
         EdfaPayPlugin.initiate(
             context = this,
-            environment = Env.DEVELOPMENT,//.with("https://testdeployment.edfapay.com/"),
+            environment = env!!,
             authCode = authCode, // we-settle
             onSuccess = { plugin ->
                 initializing(false)
                 showPay()
 
                 EdfaPayPlugin.theme
-                    .setButtonBackgroundColor("#06E59F")
+                    .setButtonBackgroundColor("#E74425")
                     .setButtonTextColor("#000000")
                     .setHeaderImage(this, R.drawable.edfapay_text_logo)
-                    .setPoweredByImage(this, R.drawable.edfapay_text_logo)
+//                    .setPoweredByImage(this, R.drawable.edfapay_text_logo)
 
                 Toast.makeText(this, "SDK Initialized Successfully", Toast.LENGTH_SHORT).show()
             }
@@ -182,14 +180,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun pay(){
-        val amount = txtAmount?.text
-        if(amount.toString().toDoubleOrNull() == null){
+        val amount = txtAmount?.text?.toString()
+        if(amount?.toDoubleOrNull() == null){
             Toast.makeText(this, "Invalid Amount", Toast.LENGTH_SHORT).show()
             return
         }
 
         val params = TxnParams(
-            amount = String.format("%.2f", amount), // should be in format of currency (like SAR would be 1.00)
+            amount = String.format("%.2f", amount.toDouble()), // should be in format of currency (like SAR would be 1.00)
             transactionType = TransactionType.PURCHASE,
         )
 
@@ -204,7 +202,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Card Scan Timeout", Toast.LENGTH_SHORT).show()
             },
 
-            onPaymentProcessComplete = { status, code, transaction ->
+            onPaymentProcessComplete = { status, code, transaction, isProcessComplete ->
                 when (status) {
                     true -> {
                         Toast.makeText(this, "Success: Payment Process Complete", Toast.LENGTH_SHORT).show()
