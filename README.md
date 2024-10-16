@@ -51,13 +51,13 @@
 
 
 > [!IMPORTANT]
-> ### Adding Edfapay Gradle plugin ![Version](https://img.shields.io/badge/Gradle%20Plugin-v1.0.0-blue.svg)
+> ### Adding Edfapay Gradle plugin ![Version](https://img.shields.io/badge/Gradle%20Plugin-v1.0.1-blue.svg)
 > It is important to apply edfapay plugin to your app module build.gradle
 >
 > **Using [plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block):**
 > ```groovy
 > plugins {
->   id("com.edfapay.softpos.tools") version "1.0.0"
+>   id("com.edfapay.softpos.tools") version "1.0.1"
 > }
 > ```
 >
@@ -69,7 +69,7 @@
 > ```groovy
 > buildscript {
 >   dependencies {
->     classpath("com.edfapay.softpos:plugin:1.0.0") // add this line
+>     classpath("com.edfapay.softpos:plugin:1.0.1") // add this line
 >   }
 > }
 >
@@ -79,7 +79,7 @@
 
 
 > [!IMPORTANT]
-> ### Adding dependency
+> ### Adding dependency ![Version](https://img.shields.io/badge/Jitpack-v1.0.6.1-green.svg)
 > **It is important to add dependency to your project module `build.gradle`**
 > - Provide your `partner code` to the script below at install method like: `install("xyz...")`
 > - If you provide the `null` in install method like: `install(null)`, The plugin will look for the value from variable `EDFAPAY_PARTNER` at `gradle.properties` of your project and apply it to the script.
@@ -117,7 +117,7 @@
 >      - If the developer wants to define the **mode**, then no need to specify **version to EDFAPAY_SDK_VERSION** property.
 > 
 >  - **EDFAPAY_SDK_VERSION**
->      - The developer should set the property with the required **version** of SDK suggested by EdfaPay. example: **`EDFAPAY_SDK_VERSION=1.0.3`**
+>      - The developer should set the property with the required **version** of SDK suggested by EdfaPay. example: **`EDFAPAY_SDK_VERSION=1.0.6.1`**
 >      - If the developer defines the **version** then **mode** will be skipped and a specified version will downloaded as a dependency.
 >
 
@@ -169,7 +169,7 @@ EdfaPayPlugin.pay(
         Toast.makeText(this, "Card Scan Timeout", Toast.LENGTH_SHORT).show()
     },
 
-    onPaymentProcessComplete = { status, code, transaction ->
+    onPaymentProcessComplete = { status, code, transaction, isProcessComplete ->
         when (status) {
             true -> Toast.makeText(this, "Success: Payment Process Complete", Toast.LENGTH_SHORT).show()
             false -> Toast.makeText(this, "Failure: Payment Process Complete", Toast.LENGTH_SHORT).show()
