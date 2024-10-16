@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.edfapay.softpos.tools' version '0.0.7'
+    id 'com.edfapay.softpos.tools' version '1.0.1'
 }
 
 android {
@@ -58,9 +58,7 @@ dependencies {
 
     edfapay{
         softpos{
-            // Replace partnerCode value with your partner code
-            def partnerCode = findProperty("EDFAPAY_PARTNER")
-            install(partnerCode)
+            install()
         }
     }
 }

@@ -155,6 +155,7 @@ class MainActivity : AppCompatActivity() {
 
 
         initializing(true)
+        EdfaPayPlugin.enableLogs = true
         EdfaPayPlugin.initiate(
             context = this,
             environment = env!!,
