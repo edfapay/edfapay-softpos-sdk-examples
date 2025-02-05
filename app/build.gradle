@@ -58,6 +58,7 @@ dependencies {
 
     edfapay{
         softpos{
+            version="1.1.2"
             install()
         }
     }

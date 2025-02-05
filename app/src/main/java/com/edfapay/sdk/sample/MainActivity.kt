@@ -165,10 +165,9 @@ class MainActivity : AppCompatActivity() {
                 showPay()
 
                 EdfaPayPlugin.theme
-                    .setButtonBackgroundColor("#E74425")
-                    .setButtonTextColor("#000000")
+                    .setButtonBackgroundColor("#06E59F")
+                    .setButtonTextColor("#ffffff")
                     .setHeaderImage(this, R.drawable.edfapay_text_logo)
-//                    .setPoweredByImage(this, R.drawable.edfapay_text_logo)
 
                 Toast.makeText(this, "SDK Initialized Successfully", Toast.LENGTH_SHORT).show()
             }
