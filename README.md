@@ -45,12 +45,12 @@
 > [!IMPORTANT]
 > ### Install flutter-edfapay-softpos-sdk
 > ```terminal
-> flutter pub add flutter-edfapay-softpos-sdk
+> flutter pub add flutter_edfapay_softpos_sdk
 > ```
 > or add the dependecy in project `pubspec.yaml`
 > ```yaml
 > dependencies:
->   flutter-edfapay-softpos-sdk: any
+>   flutter_edfapay_softpos_sdk: any
 > ```
 
 ## Usage
