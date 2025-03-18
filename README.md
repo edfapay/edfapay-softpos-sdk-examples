@@ -43,8 +43,23 @@
 >   flutter_edfapay_softpos_sdk: any
 > ```
 
-## Usage
 
+> [!IMPORTANT]
+> ### FlutterFragmentActivity
+> - Change the android MainActivity super class from `FlutterActivity` to `FlutterFragmentActivity`
+>   - ./android/app/src/main/kotlin/app_package_tree/MainActivity.kt
+>
+> **Example**
+> ```
+> package com.edfapay.paytab_flutter_sample
+> 
+> import io.flutter.embedding.android.FlutterFragmentActivity
+>
+> class MainActivity: FlutterFragmentActivity()
+> ```
+
+
+## Usage
 
 ### 1: Import
 
