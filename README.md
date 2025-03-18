@@ -112,7 +112,7 @@ final params = TxnParams(
 
 EdfaPayPlugin.pay(
     params,
-    onPaymentProcessComplete: (status, code, result){
+    onPaymentProcessComplete: (status, code, result, isProcessComplete){
       if(status){
         print(' >>> [ Success ]');
         print(' >>> [ ${jsonEncode(result)} ]');
