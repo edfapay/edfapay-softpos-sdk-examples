@@ -128,7 +128,7 @@
 
 ### 1: Import
 
-```dart
+```kotlin
 import com.edfapay.paymentcard.EdfaPayPlugin
 import com.edfapay.paymentcard.Env
 import com.edfapay.paymentcard.model.TransactionType
@@ -138,11 +138,11 @@ import com.edfapay.paymentcard.model.TxnParams
 
 
 ### 2: Initialization
-```dart
+```kotlin
 EdfaPayPlugin.initiate(
     context = this,
     environment = Env.DEVELOPMENT,
-    authCode = "Your login auth code here received from edfapay",
+    authCode = "Your login AuthCode/Token here received from edfapay",
     onSuccess = { plugin ->
         // Successfully initialized
     }
@@ -151,7 +151,7 @@ EdfaPayPlugin.initiate(
 }
 ```
 
-### 4: Pay
+### 3.1: Pay/Purchase Transaction
 ```kotlin
 val params = TxnParams(
     amount = amount,
@@ -187,6 +187,48 @@ EdfaPayPlugin.pay(
 ```
 
 
+
+### 3.2: Refund Transaction
+```kotlin
+val params = TxnParams(
+    amount = amount,
+    TransactionType.REFUND,
+    originalTransaction = Transaction.withTxnNumber(
+        transaction_number, // this should transaction number of the purchase transaction
+        TransactionType.PURCHASE // // this should PURCHASE
+    )
+)
+
+EdfaPayPlugin.refund(
+    this, 
+    params,
+    onRequestTimerEnd = {
+        Toast.makeText(this, "Server Request Timeout", Toast.LENGTH_SHORT).show()
+    },
+
+    onCardScanTimerEnd = {
+        Toast.makeText(this, "Card Scan Timeout", Toast.LENGTH_SHORT).show()
+    },
+
+    onPaymentProcessComplete = { status, code, transaction, isProcessComplete ->
+        when (status) {
+            true -> Toast.makeText(this, "Success: Refund Process Complete", Toast.LENGTH_SHORT).show()
+            false -> Toast.makeText(this, "Failure: Refund Process Complete", Toast.LENGTH_SHORT).show()
+        }
+    },
+
+    onCancelByUser = {
+        Toast.makeText(this, "Cancel: Cancel By User", Toast.LENGTH_SHORT).show()
+    },
+
+    onError = { e ->
+        Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+    },
+)
+```
+
+
+
 > [!TIP]
 > ### Enable or Disable Logs
 > The developer can enable or disable logging at the SDK
@@ -199,12 +241,31 @@ EdfaPayPlugin.pay(
 > EdfaPayPlugin.animationSpeedX = 2.0f
 > ```
 > ### Setting Theme
-> ```dart
+> ```kotlin
 > EdfaPayPlugin.theme
 >     .setButtonBackgroundColor("#06E59F")
 >     .setButtonTextColor("#000000")
 >     .setHeaderImage(this, R.drawable.logo)
 >     .setPoweredByImage(this, R.drawable.ogo);
+> ```
+> ### Terminal Information
+> ```kotlin
+> EdfaPayPlugin.terminalInfo(
+>     onSuccess = { model ->
+>         /*
+>             model contains below properties
+>             - deviceId:String
+>             - tsn:String
+>             - merchantId:String
+>             - terminalId:String
+>             - merchantName:String
+>             - version:String
+>         */
+>     },
+>     onError = { exception ->
+>         // if any exception happened will be thrown with cause/reason
+>     }
+> )
 > ```
 
 ## License
